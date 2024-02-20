@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 :root {
   --primary-color: #38609d;
@@ -11,39 +11,35 @@
 body {
   background-image: url('/public/assets/images/bg.jpg');
   background-repeat: repeat-x;
-  font-family: 'Manrope';
-  color: #f0f4f3;
+  font-family: 'Lexend';
+  color: #000;
   max-width: 100%;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0;
+  padding: 0px;
   background-repeat: repeat-x;
   background-color: var(--bg-color);
-  font-family: 'Manrope';
-  color: #f0f4f3;
-  max-width: 100%;
-  margin: 40px auto;
-  padding: 20px;
-  background-size: conver; 
   background-position: center;
 }
 
 .navbar {
   display: flex;
   max-width: 800px;
-  margin: 50px auto;
-  height: 130px;
-  border-bottom: 1px solid #b69e96;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px auto;
+  height: 10px;
 }
 
 .navbar h1 {
-  color: var(--secondary-color);
+  color: #000;
   font-size: 3em;
 }
 
-.navbar .links {
+.nav-links {
   margin-left: auto;
-  margin-top: 80px;
-  padding-bottom: 0px;
+  margin-top: 20px;
+  color: #000;
 }
 
 .navbar a {
@@ -91,9 +87,9 @@ h5 {
 
 a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: #000;
   font-size: 0.9em;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 /* product card */
