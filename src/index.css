@@ -3,7 +3,7 @@
 :root {
   --primary-color: #38609d;
   --secondary-color: #9ca9e0;
-  --hover: #c8d0db;
+  --hover: #38609d;
   --dark: #000;
   --bg-color: #D6D7DB;
   --shadow: 5px 5px 10px #888888;
@@ -12,159 +12,95 @@
 body {
   background-image: url('/public/assets/images/bg.jpg');
   background-repeat: repeat-x;
-  font-family: 'Lexend';
+  font-family: 'Lexend', sans-serif; 
   color: var(--dark);
   max-width: 100%;
   margin: 0;
-  background-repeat: repeat-x;
   background-color: var(--bg-color);
   background-position: center;
 }
 
 .navbar {
   display: flex;
-  max-width: 100%x;
-  justify-content: center;
-  text-align: center;
+  max-width: 100%;
+  justify-content: space-between; 
   align-items: center;
   padding: 20px;
-  margin: 0 auto;
-  height: 50px;
   background-color: #000000d6;
 }
 
 .navbar h1 {
   color: #D6D7DB;
   font-size: 3em;
+  margin: 0;
 }
 
 .nav-links {
-  margin-left: auto;
-  margin-top: 20px;
+  display: flex;
 }
 
 .navbar a {
-  margin-left: 16px;
   text-decoration: none;
+  color: #D6D7DB;
   padding: 6px;
+  margin-left: 16px;
 }
 
 .navbar a:hover {
   color: var(--hover);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 600;
-  color: var(--primary-color);
+.burger-menu {
+  display: none;
 }
+/* Small devices (tablets, 768px - 992px) */
+@media only screen and (max-width: 568px) {
+  .navbar h1 {
+    font-size: 2em;
+  }
 
-h2 {
-  text-align: center;
-  font-size: 1.2em;
-  color: #000;
-}
+  .nav-links {
+    display: none; 
+    flex-direction: column; 
+    background-color: #000000d6; 
+    width: 100%; 
+    padding: 20px 0; 
+    position: absolute; 
+    top: 80px; 
+    left: 0; 
+  }
 
-p {
-  font-weight: 200;
-  color: #000;
-  font-size: 0.7em;
-}
+  .navbar a {
+    margin: 10px 0; 
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
 
-h5 {
-  color: var(--secondary-color);
-}
+  /* Show menu links when burger menu is active */
+  .nav-links.active {
+    display: flex;
+  }
 
-.App {
-  font-size: 1.2em;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: #D6D7DB;
-  font-size: 0.9em;
-  font-weight: 300;
-}
-
-/* product card */
-
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-.product-card {
-  border: 1px solid #efefef;
-  margin: 20px;
-  width: calc(33.33% - 40px);
-  align-items: center;
-  box-sizing: border-box;
-  display: inline-block;
-  box-shadow: var(--shadow);
-}
-.card-content {
-  max-width: 650px;
-  margin: 10px auto;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  overflow: hidden;
-}
-
-/* product details */
-
-.product-details {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #efefef;
-  box-shadow: var(--shadow);
-
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.buy-button {
-  display: inline-block;
-  padding: 10px 55px;
-  font-size: 16px;
-  font-weight: 200;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: 2px solid #efefef; /* Button border color */
-  border-radius: 50px; /* Rounded corners */
-  background-color: var(--primary-color); /* Button background color */
-  color: #efefef; 
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
-  box-shadow: var(--shadow);
-}
-
-/* btn Hover effect */
-.buy-button:hover {
-  background-color: var(--primary-color); 
-  color: #000; 
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    color: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* burger menu lines */
+  .burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease-in-out;
+  }
 }
