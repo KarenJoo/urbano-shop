@@ -2,9 +2,10 @@
 
 :root {
   --primary-color: #38609d;
-  --secondary-color: #8ea1c6;
+  --secondary-color: #9ca9e0;
   --hover: #c8d0db;
-  --bg-color: #e5dfd8;
+  --dark: #000;
+  --bg-color: #D6D7DB;
   --shadow: 5px 5px 10px #888888;
 }
 
@@ -12,10 +13,9 @@ body {
   background-image: url('/public/assets/images/bg.jpg');
   background-repeat: repeat-x;
   font-family: 'Lexend';
-  color: #000;
+  color: var(--dark);
   max-width: 100%;
   margin: 0;
-  padding: 0px;
   background-repeat: repeat-x;
   background-color: var(--bg-color);
   background-position: center;
@@ -23,23 +23,24 @@ body {
 
 .navbar {
   display: flex;
-  max-width: 800px;
+  max-width: 100%x;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin: 10px auto;
-  height: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  height: 50px;
+  background-color: #000000d6;
 }
 
 .navbar h1 {
-  color: #000;
+  color: #D6D7DB;
   font-size: 3em;
 }
 
 .nav-links {
   margin-left: auto;
   margin-top: 20px;
-  color: #000;
 }
 
 .navbar a {
@@ -87,7 +88,7 @@ h5 {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #D6D7DB;
   font-size: 0.9em;
   font-weight: 300;
 }
