@@ -1,11 +1,16 @@
 import React from 'react'
+import { useState } from 'react';
 
 export default function About() {
-  const productTitle = 'Milk';
-  const productPrice = 10;
+  const [counter, setCounter] = useState(0);
 
+  function onButtonClick() {
+    setCounter(counter + 10);
+  }
   return (
-  <div>Hey{productTitle}:{productPrice}
+  <div>
+    <div>Counter: {counter}</div>
+    <button onClick={onButtonClick}>Add 10</button>
   </div>
   );
 }
