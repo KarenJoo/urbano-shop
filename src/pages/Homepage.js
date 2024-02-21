@@ -7,12 +7,42 @@ export default function Homepage() {
       <h2>Productlist</h2>
       <div className='product-list'>
         <>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
+        <ProductCard
+          title="Product 1"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
+        <ProductCard
+          title="Product 2"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
+        <ProductCard
+          title="Product3"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
+        <ProductCard
+          title="Product 4"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
+        <ProductCard
+          title="Product 5"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
+        <ProductCard
+          title="Product Name"
+          description="Product Description"
+          price="$10.99"
+          img="/assets/images/product.jpg"
+        />
         </>
       </div>
     </div>
