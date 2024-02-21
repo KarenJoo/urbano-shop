@@ -53,6 +53,86 @@ body {
 .burger-menu {
   display: none;
 }
+
+/* product-list */
+.product-container {
+  width: 90%;
+  height: 90%;
+ margin: 0 auto;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.product-card {
+  border: 1px solid #efefef;
+  margin: 20px;
+  width: calc(33.33% - 40px);
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-block;
+  box-shadow: var(--shadow);
+  background-color: var(--bg-color);
+}
+
+.card-content {
+  max-width: 650px;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+}
+
+/* product details */
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #efefef;
+  box-shadow: var(--shadow);
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #efefef; /* Button border color */
+  border-radius: 50px; /* Rounded corners */
+  background-color: var(--primary-color); /* Button background color */
+  color: #efefef; 
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  box-shadow: var(--shadow);
+}
+
+
+
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 568px) {
   .navbar h1 {

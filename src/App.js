@@ -8,17 +8,17 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-      <Router>
-    <div className="App">
-      <Navbar/>
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/" element={<ProductPage />} />
-        <Route exact path="/" element={<About />} />
-        <Route exact path="/" element={<Contact />} />
-        <Route exact path="/" element={<Cart />} />
-      </Routes>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

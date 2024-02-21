@@ -33,7 +33,7 @@ export default function Navbar() {
         <span></span>
       </button>
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <Link to='/'>Homepage</Link>
+        <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/contact'>Contact</Link>
         <Link to='/cart'>Cart</Link>
