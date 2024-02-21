@@ -5,14 +5,14 @@
   --secondary-color: #9ca9e0;
   --hover: #38609d;
   --dark: #000;
-  --bg-color: #D6D7DB;
+  --bg-color: #d6d7db;
   --shadow: 5px 5px 10px #888888;
 }
 
 body {
   background-image: url('/public/assets/images/bg.jpg');
   background-repeat: repeat-x;
-  font-family: 'Lexend', sans-serif; 
+  font-family: 'Lexend', sans-serif;
   color: var(--dark);
   max-width: 100%;
   margin: 0;
@@ -23,14 +23,14 @@ body {
 .navbar {
   display: flex;
   max-width: 100%;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: #000000d6;
 }
 
 .navbar h1 {
-  color: #D6D7DB;
+  color: #d6d7db;
   font-size: 3em;
   margin: 0;
 }
@@ -41,7 +41,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #D6D7DB;
+  color: #d6d7db;
   padding: 6px;
   margin-left: 16px;
 }
@@ -58,7 +58,7 @@ body {
 .product-container {
   width: 90%;
   height: 90%;
- margin: 0 auto;
+  margin: 0 auto;
 }
 
 .product-list {
@@ -106,7 +106,6 @@ body {
   padding: 10px;
   border: 1px solid #efefef;
   box-shadow: var(--shadow);
-
 }
 
 img {
@@ -126,12 +125,23 @@ img {
   border: 1px solid #efefef; /* Button border color */
   border-radius: 50px; /* Rounded corners */
   background-color: var(--primary-color); /* Button background color */
-  color: #efefef; 
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  color: #efefef;
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Smooth transition on hover */
   box-shadow: var(--shadow);
 }
 
-
+/* product page */
+.product-page-container {
+  width: 80%;
+  max-width: 600px;
+  height: 50%;
+  margin: 50px auto;
+  background-color: var(--bg-color);
+  border: 1px solid #efefef;
+  box-shadow: var(--shadow);
+}
 
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 568px) {
@@ -140,18 +150,18 @@ img {
   }
 
   .nav-links {
-    display: none; 
-    flex-direction: column; 
-    background-color: #000000d6; 
-    width: 100%; 
-    padding: 20px 0; 
-    position: absolute; 
-    top: 80px; 
-    left: 0; 
+    display: none;
+    flex-direction: column;
+    background-color: #000000d6;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
   }
 
   .navbar a {
-    margin: 10px 0; 
+    margin: 10px 0;
     padding: 10px;
     align-items: center;
     text-align: center;
@@ -174,7 +184,7 @@ img {
     cursor: pointer;
     padding: 0;
   }
-  
+
   /* burger menu lines */
   .burger-menu span {
     display: block;

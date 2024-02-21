@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard() {
   return (
@@ -10,8 +11,8 @@ export default function ProductCard() {
         <h2>Product name</h2>
         <p>Description</p>
         <h3>Price: $</h3>
-        <button className="buy-button">Buy Now</button>
-      </div>
+        <Link to="/ProductPage" className="buy-button">View Product</Link>      
+        </div>
     </div>
   );
 }

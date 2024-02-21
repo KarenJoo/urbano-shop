@@ -7,6 +7,11 @@ export default function Homepage() {
       <h2>Productlist</h2>
       <div className='product-list'>
         <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
       </div>
     </div>
   );
