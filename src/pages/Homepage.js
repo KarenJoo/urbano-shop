@@ -35,7 +35,7 @@ export default function Homepage() {
         ))}
       </div>
       {products.length > displayCount && (
-        <button className="view-button" onClick={handleViewMore}>View More</button>
+        <button className="view-more-button" onClick={handleViewMore}>View More</button>
       )}
     </div>
   );
