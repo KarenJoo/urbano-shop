@@ -20,7 +20,10 @@ body {
   min-height: 100vh; /* Use min-height to ensure the body fills the viewport height */
 }
 
-
+p {
+  font-weight: 200;
+  font-size: 15px;
+}
 
 .navbar {
   display: flex;
@@ -78,6 +81,7 @@ body {
   display: inline-block;
   box-shadow: var(--shadow);
   background-color: var(--bg-color);
+  padding: 10px;
 }
 
 .card-content {
@@ -90,6 +94,19 @@ body {
   padding: 10px;
 }
 
+.card-head-content,
+.card-foot-content {
+  height: 200px;
+  width: 100%;
+  justify-content: center;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.card-head-content {
+  text-align: left;
+}
+
 .image-container {
   display: flex;
   justify-content: center;
@@ -97,7 +114,6 @@ body {
   height: 300px;
   overflow: hidden;
 }
-
 
 /* product details */
 
@@ -144,9 +160,7 @@ img {
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-
 }
-
 
 /* product page */
 .product-page-container {
