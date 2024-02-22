@@ -150,9 +150,9 @@ img {
 
 .product-details-card {
   margin: 50px auto;
-  height: 70%;
+  height: 90%;
   width: 60%;
-  max-width: 800px;
+  max-width: 600px;
   background-color: var(--bg-color);
   border: 1px solid #efefef;
   box-shadow: var(--shadow);
