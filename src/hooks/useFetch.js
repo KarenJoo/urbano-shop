@@ -23,7 +23,6 @@ const useFetch = (url) => {
 
     fetchData();
 
-    // Cleanup function
     return () => {
     };
   }, [url]); 
