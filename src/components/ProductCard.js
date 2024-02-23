@@ -33,10 +33,9 @@ export default function ProductCard({ product: fetchedProduct }) {
         <p>{product.description}</p>
         </div>
         <div className='card-foot-content'>
-        <h4>{product.price} NOK</h4>
-            <h3>On Sale: {product.discountedPrice} NOK</h3>
-            <OnSale price={product.price} discountedPrice={product.discountedPrice} />
-        <Link to="/product" className="buy-button">View Product</Link>
+        <h4 className={product.price !== product.discountedPrice ? 'on-sale' : ''}>{product.price} NOK</h4>
+            <OnSale price={product.price} discountedPrice={product.discountedPrice} />        
+            <Link to="/product" className="buy-button">View Product</Link>
        </div>
       </div>
     </div>
