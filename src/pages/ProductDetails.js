@@ -30,7 +30,7 @@ export default function ProductDetails() {
             <p>{product.description}</p>
           </div>
           <div className='product-details-foot'>
-            <h5>Original Price: {product.price} NOK</h5>
+            <h4>{product.price} NOK</h4>
             <h3>On Sale: {product.discountedPrice} NOK</h3>
             <button className="buy-button">Add to Cart</button>
           </div>      

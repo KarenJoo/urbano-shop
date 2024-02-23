@@ -30,6 +30,7 @@ export default function Homepage() {
             title={product.title}
             description={product.description}
             price={product.price}
+            discountedPrice={product.discountedPrice}
             img={product.image.url}
           />
         ))}
