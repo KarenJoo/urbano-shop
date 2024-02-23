@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import OnSale from './OnSale';
 
-export default function ProductCard(product) {
+export default function ProductCard({ product: fetchedProduct }) {
     const { data: productData, loading, error } = useFetch(`https://v2.api.noroff.dev/online-shop/`);
 
     if (loading) {
@@ -13,16 +14,18 @@ export default function ProductCard(product) {
       return <div>Error: Unable to load product details.</div>;
     }
 
+    const product = fetchedProduct; // Assign fetchedProduct to product
+
     if (!product) {
       return <div>Error: Product data not found.</div>;
     }
 
-    console.log(product.discountedPrice)
+    console.log(product.discountedPrice);
 
   return (
     <div className="product-card">
       <div className="image-container">
-        <img src={product.img} alt="Product Image" />
+        <img src={product.image.url} alt="Product Image" />
       </div>
       <div className="card-content">
         <div className='card-head-content'>
@@ -32,7 +35,7 @@ export default function ProductCard(product) {
         <div className='card-foot-content'>
         <h4>{product.price} NOK</h4>
             <h3>On Sale: {product.discountedPrice} NOK</h3>
-           
+            <OnSale price={product.price} discountedPrice={product.discountedPrice} />
         <Link to="/product" className="buy-button">View Product</Link>
        </div>
       </div>

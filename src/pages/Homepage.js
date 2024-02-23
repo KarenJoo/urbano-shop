@@ -27,6 +27,7 @@ export default function Homepage() {
         {products && products.slice(0, displayCount).map(product => (
           <ProductCard
             key={product.id} 
+            product={product}
             title={product.title}
             description={product.description}
             price={product.price}
