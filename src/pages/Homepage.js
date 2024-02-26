@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import useFetch from '../hooks/useFetch'; 
+import { PRODUCTS_URL } from '../utils/api';
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6);
-  const { data: productData, loading, error } = useFetch('https://v2.api.noroff.dev/online-shop');
+  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -26,7 +27,7 @@ export default function Homepage() {
       <div className='product-list'>
         {products && products.slice(0, displayCount).map(product => (
           <ProductCard
-            id={product.id} 
+            key={product.id} 
             product={product}
             title={product.title}
             description={product.description}
