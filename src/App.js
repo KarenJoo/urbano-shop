@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Homepage from "./Pages/Homepage";
-import ProductDetails from "./Pages/ProductDetails";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Cart from "./Pages/Cart";
-import Checkout from "./Pages/Checkout";
-import CheckoutSuccess from "./Pages/CheckoutSuccess";
-import Navbar from "./components/Header/Navbar";
+import Homepage from "./pages/Homepage";
+import ProductDetails from "./pages/ProductDetails";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
+import Navbar from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<CheckoutSuccess />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
