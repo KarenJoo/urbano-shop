@@ -13,13 +13,15 @@ export default function ProductCard({ product }) {
       <div className="card-content">
         <div className="card-head-content">
           <h2>{title}</h2>
-          <p>{description}</p>
+          <p>{description}</p> 
+         
         </div>
         <div className="card-foot-content">
           <h4 className={price !== discountedPrice ? 'on-sale' : ''}>{price} NOK</h4>
           <OnSale price={price} discountedPrice={discountedPrice} />
-          <Link to="/product" className="buy-button">View Product</Link>
-        </div>
+        </div>          
+        <Link to="/product" className="buy-button">View Product</Link>
+
       </div>
     </div>
   );
