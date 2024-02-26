@@ -23,8 +23,16 @@ body {
 
 .App {
   height: 100vh;
+  min-height: 100vh;
   max-width: 100%;
 }
+
+Footer {
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+}
+
 p {
   font-weight: 200;
   font-size: 12px;
