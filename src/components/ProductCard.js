@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import OnSale from './OnSale';
 
-export default function ProductCard({ product: fetchedProduct }) {
+export default function ProductCard({ product: singleProduct }) {
     const { data: productData, loading, error } = useFetch(`https://v2.api.noroff.dev/online-shop/`);
 
     if (loading) {
@@ -14,7 +14,7 @@ export default function ProductCard({ product: fetchedProduct }) {
       return <div>Error: Unable to load product details.</div>;
     }
 
-    const product = fetchedProduct; // Assign fetchedProduct to product
+    const product = singleProduct; 
 
     if (!product) {
       return <div>Error: Product data not found.</div>;

@@ -26,7 +26,7 @@ export default function Homepage() {
       <div className='product-list'>
         {products && products.slice(0, displayCount).map(product => (
           <ProductCard
-            key={product.id} 
+            id={product.id} 
             product={product}
             title={product.title}
             description={product.description}
