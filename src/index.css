@@ -31,11 +31,12 @@ body {
 }
 
 footer {
-  background-color: #38609d;
-  color: #fff;
+  background-color: #000000d6;
+  color: var(--bg-color);
   text-align: center;
   padding: 20px 0;
   display: flex;
+  font-size: 12px;
   flex-direction: column;
   bottom: 0;
   width: 100%;
@@ -243,6 +244,8 @@ img {
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-bottom: 150px;
+
 }
 
 /* view button */
