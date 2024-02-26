@@ -23,7 +23,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<CheckoutSuccess />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );
