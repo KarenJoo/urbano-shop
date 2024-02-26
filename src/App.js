@@ -6,7 +6,7 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Header/Navbar";
 
 function App() {
   return (
