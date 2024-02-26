@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
-import useFetch from '../hooks/useFetch'; 
+import useFetch from '../Hooks/useFetch'; 
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6);

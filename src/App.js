@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import ProductDetails from "./pages/ProductDetails";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import CheckoutSuccess from "./pages/CheckoutSuccess";
+import Homepage from "./Pages/Homepage";
+import ProductDetails from "./Pages/ProductDetails";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Cart from "./Pages/Cart";
+import Checkout from "./Pages/Checkout";
+import CheckoutSuccess from "./Pages/CheckoutSuccess";
 import Navbar from "./components/Header/Navbar";
 
 function App() {

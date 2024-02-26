@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../Hooks/useFetch';
 
 export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`https://v2.api.noroff.dev/online-shop/109566af-c5c2-4f87-86cb-76f36fb8d378`);
