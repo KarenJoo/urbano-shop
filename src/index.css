@@ -217,6 +217,10 @@ img {
   height: 300px;
 }
 
+.product-details-foot h3 {
+color: red;
+}
+
 .product-details-image {
   height: 500px;
 }

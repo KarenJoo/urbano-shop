@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import { PRODUCTS_URL, PRODUCT_ID_URL } from '../utils/api';
+import { PRODUCT_ID_URL } from '../utils/api';
 
 export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`);
@@ -32,7 +32,7 @@ export default function ProductDetails() {
           </div>
           <div className='product-details-foot'>
             <h4>{product.price} NOK</h4>
-            <h3>On Sale: {product.discountedPrice} NOK</h3>
+            <h3>Sale: {product.discountedPrice} NOK</h3>
             <button className="buy-button">Add to Cart</button>
           </div>      
         </div>
