@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,29 +11,29 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleMenuClick = () => {
-      const burgerMenu = document.querySelector('.burger-menu');
+      const burgerMenu = document.querySelector(`.${styles.burgerMenu}`);
       burgerMenu.addEventListener('click', function() {
-        this.classList.toggle('active');
+        this.classList.toggle(styles.active);
       });
     };
 
     handleMenuClick();
 
     return () => {
-      const burgerMenu = document.querySelector('.burger-menu');
+      const burgerMenu = document.querySelector(`.${styles.burgerMenu}`);
       burgerMenu.removeEventListener('click', handleMenuClick);
     };
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [menuOpen]); // Ensure the effect runs when menuOpen changes
 
   return (
-    <nav className='navbar'>
+    <nav className={styles.navbar}>
       <h1>Urbano</h1>
-      <button className='burger-menu' onClick={dropDownMenu} aria-label='Toggle navigation'>
+      <button className={styles.burgerMenu} onClick={dropDownMenu} aria-label='Toggle navigation'>
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+      <div className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/contact'>Contact</Link>
