@@ -60,7 +60,6 @@ p {
   flex-direction: column;
 }
 
-
 .product-details-image {
   display: flex;
   justify-content: center;
@@ -116,7 +115,6 @@ img {
   height: 500px;
 }
 
-
 /* product page */
 .product-details-container {
   min-width: 80%;
@@ -171,7 +169,4 @@ img {
   body {
     background-attachment: fixed;
   }
-
- 
-
 }
