@@ -1,0 +1,11 @@
+footer {
+    background-color: #000000d6;
+    color: var(--bg-color);
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    bottom: 0;
+    width: 100%;
+  }

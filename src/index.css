@@ -30,21 +30,25 @@ body {
   flex-direction: column;
 }
 
-footer {
-  background-color: #000000d6;
-  color: var(--bg-color);
-  text-align: center;
-  padding: 20px 0;
-  display: flex;
-  font-size: 12px;
-  flex-direction: column;
-  bottom: 0;
-  width: 100%;
-}
-
 p {
   font-weight: 200;
   font-size: 12px;
+}
+
+.onSalePrice {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.onSalePrice p {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.onSalePrice h3 {
+  margin: 10px auto;
+  font-size: 20px;
 }
 
 /* product-list */
@@ -65,83 +69,12 @@ p {
   justify-content: center;
 }
 
-.product-card {
-  border: 1px solid #efefef;
-  margin: 20px;
-  width: calc(33.33% - 40px);
-  max-width: 300px;
-  align-items: center;
-  box-sizing: border-box;
-  display: inline-block;
-  box-shadow: var(--shadow);
-  background-color: var(--bg-color);
-}
-
-.card-content {
-  max-width: 650px;
-  margin: 0px auto;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.card-head-content,
-.card-foot-content {
-  height: 100px;
-  width: 100%;
-  justify-content: center;
-  margin: 10px auto;
-  text-align: center;
-}
-
-.card-head-content {
-  text-align: left;
-  height: 150px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.card-foot-content {
-  height: 80px;
-}
-
-.product-details-image,
-.image-container {
+.product-details-image {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
   overflow: hidden;
-}
-
-.on-sale {
-  text-decoration: line-through;
-  margin: 10px auto;
-  font-size: 15px;
-  padding: 0px;
-}
-
-.on-sale-price {
-  display: flex;
-  padding: 5px 5px;
-  border-radius: 3px;
-  font-size: 12px;
-  margin-right: 5px;
-}
-
-.on-sale-price p {
-  color: #000;
-  font-weight: 500;
-  margin-top: 2px;
-  padding-right: 20px;
-}
-.on-sale-price h3 {
-  margin-top: 0px;
-  padding: 0px;
-  color: red;
-  font-size: 15px;
 }
 
 /* product details */
@@ -184,7 +117,7 @@ img {
 }
 
 .product-details-foot h3 {
-color: red;
+  color: red;
 }
 
 .product-details-image {
@@ -193,7 +126,7 @@ color: red;
 
 .view-more-button,
 .view-button,
-.buy-button {
+.buyButton {
   display: inline-block;
   padding: 10px 30px;
   font-size: 12px;
@@ -207,7 +140,7 @@ color: red;
   color: #efefef;
   box-shadow: var(--shadow);
   transition: background-color 0.2s ease;
-  margin: 5px;
+  margin-top: 20px;
 }
 
 .view-more-button {
