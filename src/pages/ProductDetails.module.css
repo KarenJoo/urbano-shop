@@ -14,8 +14,9 @@
 
 .productDetailsContent {
   margin: 20px;
-  height: 300px;
+  height: auto;
 }
+
 
 .productDetailsFoot h3 {
   color: red;
