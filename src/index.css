@@ -35,22 +35,6 @@ p {
   font-size: 12px;
 }
 
-.onSalePrice {
-  display: flex;
-  justify-content: space-around;
-  font-size: 12px;
-}
-
-.onSalePrice p {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.onSalePrice h3 {
-  margin: 10px auto;
-  font-size: 20px;
-}
-
 img {
   width: 100%;
   height: 100%;
