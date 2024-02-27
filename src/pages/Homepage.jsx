@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import useFetch from '../hooks/useFetch'; 
 import { PRODUCTS_URL } from '../utils/api';
+import styles from './Homepage.module.css';
+import buttonStyles from '../components/Buttons.module.css';
+import navbarStyles from '../components/Header/Navbar.module.css';
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6);
@@ -22,23 +25,23 @@ export default function Homepage() {
   };
 
   return (
-    <div className='product-container'> 
+    <div className={styles.productContainer}> 
       <h2>All products</h2>
-      <div className='product-list'>
+      <div className={styles.productList}> 
         {products && products.slice(0, displayCount).map(product => (
           <ProductCard
-            key={product.id} 
-            product={product}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            discountedPrice={product.discountedPrice}
-            img={product.image.url}
-          />
+          key={product.id} 
+          product={product}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          discountedPrice={product.discountedPrice}
+          img={product.image.url}
+        />
         ))}
       </div>
       {products.length > displayCount && (
-        <button className="view-more-button" onClick={handleViewMore}>View More</button>
+        <button className={buttonStyles.primaryButton} onClick={handleViewMore}>View More</button> 
       )}
     </div>
   );

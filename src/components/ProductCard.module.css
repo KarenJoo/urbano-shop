@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 400px;
     overflow: hidden;
   }
 
@@ -60,18 +60,31 @@
     padding: 0px;
   }
   
+  @media only screen and (max-width: 783px) {
 
+    .cardContent {
+      margin: 0;
+      padding: 0;
+    }
+    .cardContent h2 {
+      padding: 0px;
+      margin: 0px;
+      font-size: 18px;
+    }
+    .cardHeadContent {
+      padding: 10px;
+      box-sizing: border-box;
+    }
   
-  .onSalePrice p {
-    color: #000;
-    font-weight: 500;
-    margin-top: 2px;
-    padding-right: 20px;
-  }
-  .onSalePrice h3 {
-    margin-top: 0px;
-    padding: 0px;
-    color: red;
-    font-size: 15px;
-  }
+    .cardFootContent {
+      box-sizing: border-box;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
   
+    .imageContainer {
+      width: 200px;
+      height: 100%;
+    }
+  }

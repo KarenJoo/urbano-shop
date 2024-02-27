@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 import OnSale from './OnSale';
+import styleButtons from '../components/Buttons.module.css';
 
 export default function ProductCard({ product }) {
   const { image, title, description, price, discountedPrice } = product;
@@ -21,7 +22,7 @@ export default function ProductCard({ product }) {
           <h4 className={price !== discountedPrice ? styles.onSale : ''}>{price} NOK</h4>
           <OnSale price={price} discountedPrice={discountedPrice} />
         </div>          
-        <Link to="/product" className="buyButton">View Product</Link>
+        <Link to="/product" className={styleButtons.primaryButton}>View Product</Link>
 
       </div>
     </div>
