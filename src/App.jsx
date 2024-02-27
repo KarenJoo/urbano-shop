@@ -9,12 +9,18 @@ import CheckoutSuccess from "./pages/CheckoutSuccess";
 import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
+import { useProductsStore } from "./store/store";
 
 function App() {
+  const { count, addOne, clearCount } = useProductsStore(); 
+
   return (
     <Router>
       <div className="App">
         <Layout>
+        <div>Products in cart: {count}</div>
+          <button onClick={addOne}>Click me to add</button>
+          <button onClick={clearCount}>Clear count</button>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/product" element={<ProductDetails />} />
