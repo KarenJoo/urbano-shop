@@ -1,0 +1,80 @@
+.productDetailsCard {
+  margin: 50px auto;
+  height: 90%;
+  width: 90%;
+  max-width: 600px;
+  background-color: var(--bg-color);
+  border: 1px solid #efefef;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.productDetailsContent {
+  margin: 20px;
+  height: 300px;
+}
+
+.productDetailsFoot h3 {
+  color: red;
+}
+
+.productDetailsContainer {
+  min-width: 80%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.productDetailsImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* product details */
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #efefef;
+  box-shadow: var(--shadow);
+}
+
+/*  reviews  */
+.reviewsContainer {
+  background-color: var(--bg-color);
+  border: 1px solid #efefef;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 80%;
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+}
+
+.review {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.reviewFoot {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0px auto;
+}
+
+.reviewFoot p {
+  padding-right: 20px;
+}
