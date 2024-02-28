@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
-import useFetch from '../hooks/useFetch';
-import { PRODUCT_ID_URL } from '../utils/api';
-import styles from '../pages/ProductDetails.module.css';
-import buttonStyles from '../components/Buttons.module.css';
-import { useCartStore } from '../store/store';
+import React, { useState } from 'react'
+import useFetch from '../hooks/useFetch'
+import { PRODUCT_ID_URL } from '../utils/api'
+import styles from '../pages/ProductDetails.module.css'
+import buttonStyles from '../components/Buttons.module.css'
 
 export default function ProductDetails() {
-  const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`);
-  const { cart, addToCart } = useCartStore();
-  
-  const [isAdded, setIsAdded] = useState(false);
-
-  const handleAddToCart = () => {
-    addToCart(product);
-    setIsAdded(true); 
-  };
+  const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
 
   if (loading) {
     return <div>Loading...</div>
@@ -44,8 +35,7 @@ export default function ProductDetails() {
           <div className={styles.productDetailsFoot}>
             <h4>{product.price} NOK</h4>
             <h3>Sale: {product.discountedPrice} NOK</h3>
-            <button onClick={handleAddToCart} className={buttonStyles.primaryButton}>Add to Cart</button>
-            {isAdded && <p>Item added to cart!</p>}
+            <button className={buttonStyles.primaryButton}>Add to Cart</button>
           </div>
         </div>
       </div>
