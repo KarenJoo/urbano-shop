@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { useSelector } from 'react-redux'; // corrected import
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const cartCount = useSelector((state) => state.cart.count);
 
   const dropDownMenu = () => {
     setMenuOpen(!menuOpen);
@@ -38,6 +40,10 @@ export default function Navbar() {
         <Link to='/about'>About</Link>
         <Link to='/contact'>Contact</Link>
         <Link to='/cart'>Cart</Link>
+
+        <div className={styles.cartCount}>
+          <p>0 {cartCount}</p>
+        </div>
       </div>
     </nav>
   );

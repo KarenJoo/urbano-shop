@@ -4,13 +4,14 @@ const initialState = {
   value: 0,
 };
 
-export const counterSlice = createSlice({
-  // The name of our reducer
-  name: 'counter',
-  // The initial state of our reducer
+export const cartSlice = createSlice({
+  name: 'cart',
   initialState,
-  // These are the actions that will be made available
+  
   reducers: {
+    addToCart: (state) => {
+      state.value += 1;
+    },
     increment: (state) => {
       state.value += 1;
     },
@@ -20,6 +21,6 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement } = counterSlice.actions;
+export const { addToCart, increment, decrement } = cartSlice.actions;
 
-export default counterSlice.reducer;
+export default cartSlice.reducer;

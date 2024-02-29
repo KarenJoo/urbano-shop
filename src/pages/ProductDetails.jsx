@@ -4,16 +4,16 @@ import { PRODUCT_ID_URL } from '../utils/api'
 import styles from '../pages/ProductDetails.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import { useDispatch } from 'react-redux'
-import { increment, decrement } from '../store/cartSlice'
+import { increment, decrement, addToCart } from '../store/cartSlice'
 import Counter from '../store/Counter'
 
 export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
   const dispatch = useDispatch()
 
-  const handleAddToCart = () => {
-    dispatch(increment())
-  }
+ const handleAddToCart = () => {
+    dispatch(addToCart());
+  };
 
 
   if (loading) {

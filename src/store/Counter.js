@@ -4,7 +4,7 @@ import { decrement, increment } from "./cartSlice";
 
 
 function Counter() {
-    const count = useSelector((state) => state.counter.value);
+    const count = useSelector((state) => state.cart.value);
     const dispatch = useDispatch();
   
     return (
