@@ -10,7 +10,7 @@ import CheckoutSuccess from './pages/CheckoutSuccess'
 import Navbar from './components/Header'
 import Footer from './components/Footer'
 import Layout from './components/Layout'
-import { store } from './redux/store'
+import { store } from './store/store'
 import { Provider } from 'react-redux'
 
 function App() {
