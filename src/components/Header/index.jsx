@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import { useSelector } from 'react-redux'; // corrected import
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const cartCount = useSelector((state) => state.cart.count);
+  const cartCount = useSelector((state) => state.cart.value); // Corrected to state.cart.value
 
   const dropDownMenu = () => {
     setMenuOpen(!menuOpen);
@@ -25,7 +25,7 @@ export default function Navbar() {
       const burgerMenu = document.querySelector(`.${styles.burgerMenu}`);
       burgerMenu.removeEventListener('click', handleMenuClick);
     };
-  }, [menuOpen]); // Ensure the effect runs when menuOpen changes
+  }, [menuOpen]);
 
   return (
     <nav className={styles.navbar}>
@@ -40,9 +40,8 @@ export default function Navbar() {
         <Link to='/about'>About</Link>
         <Link to='/contact'>Contact</Link>
         <Link to='/cart'>Cart</Link>
-
         <div className={styles.cartCount}>
-          <p>0 {cartCount}</p>
+          <p>{cartCount}</p>
         </div>
       </div>
     </nav>

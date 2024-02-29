@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./cartSlice";
-
+import { decrement, increment } from "../store/cartSlice"; // Corrected import path
 
 function Counter() {
     const count = useSelector((state) => state.cart.value);
@@ -14,6 +13,6 @@ function Counter() {
         <button onClick={() => dispatch(decrement())}>Minus 1</button>
       </div>
     );
-  }
+}
   
-  export default Counter;
+export default Counter;
