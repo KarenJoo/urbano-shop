@@ -3,8 +3,9 @@ import useFetch from '../hooks/useFetch'
 import { PRODUCT_ID_URL } from '../utils/api'
 import styles from '../pages/ProductDetails.module.css'
 import buttonStyles from '../components/Buttons.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { increment, decrement } from '../store/cartSlice'
+import Counter from '../store/Counter'
 
 export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
@@ -14,7 +15,6 @@ export default function ProductDetails() {
     dispatch(increment())
   }
 
-  const count = useSelector((state) => state.counter.value)
 
   if (loading) {
     return <div>Loading...</div>
@@ -50,7 +50,7 @@ export default function ProductDetails() {
             >
               Add to Cart
             </button>
-            <p>Count: {count}</p>
+            <Counter/>
           </div>
         </div>
       </div>
