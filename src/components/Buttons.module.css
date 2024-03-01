@@ -1,20 +1,19 @@
 .primaryButton {
-    margin: 30px auto;
-    width: 90%;
-    max-width: 150px;
-    min-width: 80px;
-    justify-content: center;
-    display: flex;
-    margin-bottom: 20px;
-    padding: 15px 10px;
-    font-size: 12px;
-    font-weight: 200;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid #efefef;
-    border-radius: 50px;
-    background-color: var(--dark);
-    color: var(--bg-color);
-    box-shadow: var(--shadow);
-  }
-  
+  margin: 30px auto;
+  width: 90%;
+  max-width: 150px;
+  min-width: 80px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  font-size: 12px;
+  font-weight: 200;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #efefef;
+  border-radius: 50px;
+  background-color: var(--dark);
+  color: var(--bg-color);
+  box-shadow: var(--shadow);
+}
