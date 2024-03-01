@@ -16,10 +16,9 @@ import { store } from './store/store'
 import { Provider } from 'react-redux'
 
 
-
 function App() {
   return (
-    <Grommet theme={theme} full style={{ backgroundImage: "url('/assets/images/bg.jpg')", backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+    <Grommet theme={theme} full={true} style={{ backgroundImage: "url('/assets/images/bg.jpg')", backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
       <Provider store={store}>
         <Router>
           <div className='App'>
@@ -40,5 +39,6 @@ function App() {
     </Grommet>
   );
 }
+
 
 export default App;
