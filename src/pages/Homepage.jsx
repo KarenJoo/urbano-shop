@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard'
 import useFetch from '../hooks/useFetch'
 import { PRODUCTS_URL } from '../utils/api'
 import styles from './Homepage.module.css'
-import buttonStyles from '../components/Buttons.module.css'
+import { Button } from 'grommet'
 import navbarStyles from '../components/Header/Navbar.module.css'
 
 export default function Homepage() {
@@ -44,9 +44,7 @@ export default function Homepage() {
             ))}
       </div>
       {products.length > displayCount && (
-        <button className={buttonStyles.primaryButton} onClick={handleViewMore}>
-          View More
-        </button>
+      <Button onClick={handleViewMore}>View More</Button>
       )}
     </div>
   )

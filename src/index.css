@@ -20,12 +20,7 @@ img {
   object-fit: cover;
 }
 
-.cart-container {
-  background-color: #000;
-  width: 90%;
-  height: 70%;
-  margin: 40px auto;
-}
+
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 783px) {
   body {
