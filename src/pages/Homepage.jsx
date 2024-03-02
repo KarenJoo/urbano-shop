@@ -5,10 +5,15 @@ import { PRODUCTS_URL } from '../utils/api'
 import styles from './Homepage.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import navbarStyles from '../components/Header/Navbar.module.css'
+import { Button, Grommet, Header, Page, PageContent, PageHeader, Text } from "grommet";
+import { Moon, Sun } from "grommet-icons";
+
 
 export default function Homepage() {
-  const [displayCount, setDisplayCount] = useState(6)
-  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`)
+  const [displayCount, setDisplayCount] = useState(6);
+  const [searchTerm, setSearchTerm] = useState(''); 
+  const [dark, setDark] = useState(false);
+  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`);
 
   if (loading) {
     return <div>Loading...</div>
@@ -23,6 +28,10 @@ export default function Homepage() {
   const handleViewMore = () => {
     setDisplayCount((prevCount) => prevCount + 6)
   }
+
+  const filteredProducts = products.filter((product) =>
+  product.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <div className={styles.productContainer}>
