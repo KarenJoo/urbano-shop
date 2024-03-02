@@ -6,7 +6,6 @@ import styles from './Homepage.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import navbarStyles from '../components/Header/Navbar.module.css'
 import { Button, Grommet, Header, Page, PageContent, PageHeader, Text } from "grommet";
-import { Moon, Sun } from "grommet-icons";
 
 
 export default function Homepage() {

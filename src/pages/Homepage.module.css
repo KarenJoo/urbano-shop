@@ -1,23 +1,18 @@
-.searchBox {
-  background-color: lightblue;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  margin: 20px auto;
-}
-
-
 .productContainer {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background-image: url('/public/assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.productContainer .headerText  {
-margin: 40px auto;
-font-size: 30px;
-font-weight: 600;
+.productContainer .headerText {
+  margin: 40px auto;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .productContainer h2 {

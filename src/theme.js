@@ -20,11 +20,6 @@ export const theme = {
         light: {
           small: '0 2px 2px #888888',
         },
-      },
-      backgroundImage: "url('/assets/images/bg.jpg')",
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
+      }
     },
   };

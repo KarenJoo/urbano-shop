@@ -11,7 +11,14 @@
 
 body {
   margin: 0;
+  background-image: url("/public/assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
 }
+
 p {
   font-weight: 200;
   font-size: 12px;
