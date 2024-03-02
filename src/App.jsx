@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import { Route, Routes } from 'react-router-dom'
 import { Grommet } from 'grommet'
 import { theme } from './theme'
@@ -19,8 +18,8 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Provider store={store}>
-        <Layout>
-          <Routes>
+        <Routes>
+          <Route path='/' element={<Layout />}>
             <Route exact path='/' element={<Homepage />} />
             <Route path='/product' element={<ProductDetails />} />
             <Route path='/about' element={<About />} />
@@ -28,8 +27,8 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/success' element={<CheckoutSuccess />} />
-          </Routes>
-        </Layout>
+          </Route>
+        </Routes>
       </Provider>
     </Grommet>
   )
