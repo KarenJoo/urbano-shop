@@ -31,7 +31,7 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className={styles.productDetailsContainer}>
+    <div className="productContainer">
       <div className={styles.productDetailsCard}>
         <div className={styles.productDetailsImage}>
           <img src={product.image.url} alt={product.image.alt} />

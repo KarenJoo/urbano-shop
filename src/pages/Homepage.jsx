@@ -33,7 +33,7 @@ export default function Homepage() {
 );
 
   return (
-    <div className={styles.productContainer}>
+    <div className="productContainer">
       <h2 className={styles.headerText}>All products</h2>
       <div className={styles.productList}>
         {products &&

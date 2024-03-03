@@ -30,6 +30,17 @@ img {
   object-fit: cover;
 }
 
+.productContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/public/assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 783px) {
