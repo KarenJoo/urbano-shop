@@ -22,6 +22,10 @@
   color: red;
 }
 
+.productDetailsFoot h4 {
+  text-decoration: line-through;
+}
+
 .productDetailsContainer {
   min-width: 80%;
   min-height: 100vh;

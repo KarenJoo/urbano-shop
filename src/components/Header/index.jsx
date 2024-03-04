@@ -6,8 +6,8 @@ import cartIcon from '../../assets/icons/shopping-cart.svg'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const cartCount = useSelector((state) => state.cart.value)
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartCount = cartItems.length
   const dropDownMenu = () => {
     setMenuOpen(!menuOpen)
   }

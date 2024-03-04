@@ -1,20 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useFetch from '../hooks/useFetch'
 import { PRODUCT_ID_URL } from '../utils/api'
 import styles from '../pages/ProductDetails.module.css'
 import buttonStyles from '../components/Buttons.module.css'
-import { useDispatch } from 'react-redux'
-import { increment, decrement, addToCart } from '../store/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../store/cartSlice'
 import Counter from '../store/Counter'
 
 export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
   const dispatch = useDispatch()
 
- const handleAddToCart = () => {
-    dispatch(addToCart());
-  };
 
+const cartItems = useSelector(state => state.cart.cartItems);  
+
+const handleAddToCart = (product) => {
+  dispatch(addToCart(product));
+  console.log('Added product:', product); 
+};
 
   if (loading) {
     return <div>Loading...</div>
@@ -45,7 +48,7 @@ export default function ProductDetails() {
             <h4>{product.price} NOK</h4>
             <h3>Sale: {product.discountedPrice} NOK</h3>
             <button
-              onClick={handleAddToCart}
+              onClick={() => handleAddToCart(product)}
               className={buttonStyles.primaryButton}
             >
               Add to Cart
