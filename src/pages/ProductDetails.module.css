@@ -52,14 +52,19 @@
   box-shadow: var(--shadow);
 }
 
+
+
 /*  reviews  */
 .reviewsContainer {
   background-color: var(--bg-color);
   border: 1px solid #efefef;
   margin: 0 auto;
   margin-bottom: 50px;
-  width: 80%;
+  width: 60%;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   box-shadow: var(--shadow);
 }
 
