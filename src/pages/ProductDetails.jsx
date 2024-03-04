@@ -54,7 +54,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-      <h2>Reviews</h2>
+      <h2 className={styles.reviewHeader}>Reviews</h2>
       <div className={styles.reviewsContainer}>
         {product.reviews && product.reviews.length > 0 ? (
           product.reviews.map((review) => (
