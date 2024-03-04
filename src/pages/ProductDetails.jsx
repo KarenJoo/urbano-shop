@@ -16,6 +16,8 @@ const cartItems = useSelector(state => state.cart.cartItems);
 
 const handleAddToCart = (product) => {
   dispatch(addToCart(product));
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  localStorage.setItem('cartItems', JSON.stringify([...cartItems, product]));
   console.log('Added product:', product); 
 };
 
