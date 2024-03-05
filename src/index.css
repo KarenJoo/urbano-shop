@@ -48,30 +48,29 @@ img {
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin: 20px auto;
   background-color: var(--bg-color);
   box-shadow: var(--shadow);
   border: 1px solid #efefef;
   max-width: 500px;
+  min-width: 300px;
   max-height: 200px;
   flex: 1;
 }
 
 .cartCard img {
   max-width: 30%;
+  min-width: 50%;
   max-height: 200px;
 }
 
-.cartCardFoot {
-  flex: 1;
-  padding: 10px;
+.cartCardContent {
+  margin-left: 30px;
 }
 
-.cartCardFoot p {
+.cartCardContent p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 /* Small devices (tablets, 768px - 992px) */
