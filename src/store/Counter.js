@@ -1,18 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../store/cartSlice"; // Corrected import path
+import { addCartItem, removeCartItem } from "../store/cartSlice"; // Adjust path as needed
 
-function Counter() {
-    const count = useSelector((state) => state.cart.value);
+function CartItemCounter({itemId}) {
+    const item = useSelector((state) => 
+        state.cart.cartItems.find(item => item.id === itemId)
+    );
     const dispatch = useDispatch();
   
+    if (!item) return null; 
     return (
       <div>
-        <div>Count: {count}</div>
-        <button onClick={() => dispatch(increment())}>Add 1</button>
-        <button onClick={() => dispatch(decrement())}>Minus 1</button>
+        <div>Quantity: {item.quantity}</div>
+        <button onClick={() => dispatch(addCartItem({id: itemId}))}>Increase</button>
+        <button onClick={() => dispatch(removeCartItem({id: itemId}))}>Decrease</button>
       </div>
     );
 }
   
-export default Counter;
+export default CartItemCounter;

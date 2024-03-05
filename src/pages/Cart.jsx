@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 import buttonStyles from '../components/Buttons.module.css'
+
+
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
   const dispatch = useDispatch();
