@@ -31,7 +31,7 @@ export const cartSlice = createSlice({
         if (state.cartItems[index].quantity > 1) {
           state.cartItems[index].quantity -= 1;
         } else {
-          state.cartItems.splice(index, 1); // Remove the item if quantity is 1
+          state.cartItems.splice(index, 1);
         }
       }
     },
