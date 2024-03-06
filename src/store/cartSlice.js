@@ -9,11 +9,12 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
-      if (itemIndex >= 0) {
-        state.cartItems[itemIndex].quantity += 1; // Increment quantity if item exists
+      const { id, quantity } = action.payload;
+      const existingItemIndex = state.cartItems.findIndex(item => item.id === id);
+      if (existingItemIndex !== -1) {
+        state.cartItems[existingItemIndex].quantity += quantity;
       } else {
-        state.cartItems.push({...action.payload, quantity: 1}); // Add new item with quantity 1
+        state.cartItems.push({ ...action.payload });
       }
     },
     removeItemFromCart: (state, action) => {

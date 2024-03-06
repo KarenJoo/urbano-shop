@@ -11,9 +11,19 @@ export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`);
   const dispatch = useDispatch();
 
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  // all state changes goes through Redux and then to local storage
   const addProductToCart = (product) => {
-    dispatch(addToCart(product)); // Dispatch the addToCart action
-    console.log('Added product:', product);
+    const existingItemIndex = cartItems.findIndex((item) => item.id === product.id);
+    if (existingItemIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += 1;
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    } else {
+      dispatch(addToCart({ ...product, quantity: 1 }));
+      console.log('Added product:', product);
+    }
   };
 
   if (loading) {

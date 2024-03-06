@@ -7,9 +7,15 @@ import cartIcon from '../../assets/icons/shopping-cart.svg';
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const cartItems = useSelector((state) => state.cart.cartItems);
+
+  // Calculate the total quantity of all items in the cart for the initial render
+  const calculateTotalQuantity = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   const [cartCount, setCartCount] = useState(() => {
     const storedCartCount = localStorage.getItem('cartCount');
-    return storedCartCount ? parseInt(storedCartCount, 10) : 0;
+    return storedCartCount ? parseInt(storedCartCount, 10) : calculateTotalQuantity();
   });
   
   const dropDownMenu = () => {
@@ -33,9 +39,10 @@ export default function Navbar() {
   }, [menuOpen]);
 
   useEffect(() => {
-    const count = cartItems.length;
-    setCartCount(count);
-    localStorage.setItem('cartCount', count.toString());
+    // Update to calculate total quantity based on item quantities in the cart
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    setCartCount(totalQuantity);
+    localStorage.setItem('cartCount', totalQuantity.toString()); // Update localStorage with the new total quantity
   }, [cartItems]);
 
   return (

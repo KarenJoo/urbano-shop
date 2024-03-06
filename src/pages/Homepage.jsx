@@ -11,7 +11,6 @@ import { Button, Grommet, Header, Page, PageContent, PageHeader, Text } from "gr
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6);
   const [searchTerm, setSearchTerm] = useState(''); 
-  const [dark, setDark] = useState(false);
   const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`);
 
   if (loading) {

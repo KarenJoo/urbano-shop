@@ -11,24 +11,28 @@ export default function CartPage() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const handleRemoveCartItem = (index) => {
-    dispatch(removeCartItem({ id: cartItems[index].id }));
+   // Calculate total quantity in the cart
+   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const handleRemoveCartItem = (id) => {
+    dispatch(removeCartItem({ id }));
   };
 
   return (
     <div className="productContainer">
       <div className="cartContainer">
         <h2>Cart</h2>
-        {cartItems.map((item, index) => (
-          <div className="cartCard" key={`${item.id}-${index}`}>
+        <h3>Products in cart ({totalQuantity})</h3>
+        {cartItems.map((item) => (
+          <div className="cartCard" key={item.id}>
             <img src={item.image.url} alt={item.image.alt} />
             <div className="cartCardContent">
               <p>{item.title}</p>
-              <p>Price: {item.price} NOK</p>
+              <p>Price: {item.discountedPrice} NOK</p>
               <p>Quantity: {item.quantity}</p>
               <button
                 className={buttonStyles.primaryButton}
-                onClick={() => handleRemoveCartItem(index)}
+                onClick={() => handleRemoveCartItem(item.id)}
               >
                 Remove item
               </button>
