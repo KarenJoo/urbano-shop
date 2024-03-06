@@ -7,32 +7,40 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../store/cartSlice'
 import Counter from '../store/Counter'
 
+
 export default function ProductDetails() {
-  const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
-  const dispatch = useDispatch()
+  const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.cart.cartItems);
 
+  const handleAddToCart = (product) => {
+    const updatedCartItems = [...cartItems];
+    const itemIndex = updatedCartItems.findIndex((item) => item.id === product.id);
 
-const cartItems = useSelector(state => state.cart.cartItems);  
+    if (itemIndex >= 0) {
+      updatedCartItems[itemIndex].quantity += 1; // Increment quantity if item exists
+    } else {
+      updatedCartItems.push({ ...product, quantity: 1 }); // Add new item with quantity 1
+    }
 
-const handleAddToCart = (product) => {
-  dispatch(addToCart(product));
-  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  localStorage.setItem('cartItems', JSON.stringify([...cartItems, product]));
-  console.log('Added product:', product); 
-};
+    // Update local state if you are using it to manage UI
+    dispatch(addToCart(product));
+    // Update localStorage to reflect the new state
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  };
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (error || !productData) {
-    return <div>Error: Unable to load product details.</div>
+    return <div>Error: Unable to load product details.</div>;
   }
 
-  const product = productData.data
+  const product = productData.data;
 
   if (!product) {
-    return <div>Error: Product data not found.</div>
+    return <div>Error: Product data not found.</div>;
   }
 
   return (
@@ -55,7 +63,8 @@ const handleAddToCart = (product) => {
             >
               Add to Cart
             </button>
-            <Counter/>
+            <Counter productId={product.id} />
+            <p>Quantity: {cartItems.find(item => item.id === product.id)?.quantity || 0}</p>
           </div>
         </div>
       </div>
@@ -80,5 +89,5 @@ const handleAddToCart = (product) => {
         )}
       </div>
     </div>
-  )
+  );
 }

@@ -1,21 +1,25 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addCartItem, removeCartItem } from "../store/cartSlice"; // Adjust path as needed
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addCartItem, removeCartItem } from '../store/cartSlice';
 
-function CartItemCounter({itemId}) {
-    const item = useSelector((state) => 
-        state.cart.cartItems.find(item => item.id === itemId)
-    );
-    const dispatch = useDispatch();
-  
-    if (!item) return null; 
-    return (
-      <div>
-        <div>Quantity: {item.quantity}</div>
-        <button onClick={() => dispatch(addCartItem({id: itemId}))}>Increase</button>
-        <button onClick={() => dispatch(removeCartItem({id: itemId}))}>Decrease</button>
-      </div>
-    );
-}
-  
-export default CartItemCounter;
+const Counter = ({ id }) => {
+  const dispatch = useDispatch();
+
+  const handleIncrease = () => {
+    dispatch(addCartItem({ id }));
+  };
+
+  const handleDecrease = () => {
+    dispatch(removeCartItem({ id }));
+  };
+
+  return (
+    <div>
+      <button onClick={handleDecrease}>-</button>
+      {/* Displaying the quantity will be handled elsewhere, as this component just controls actions */}
+      <button onClick={handleIncrease}>+</button>
+    </div>
+  );
+};
+
+export default Counter;

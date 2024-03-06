@@ -1,19 +1,17 @@
-// CartPage.jsx
-
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 import buttonStyles from '../components/Buttons.module.css'
 
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState([]);
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   useEffect(() => {
-    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    setCartItems(storedCartItems);
-  }, []);
+    // Update localStorage whenever cartItems change
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -22,11 +20,10 @@ export default function CartPage() {
 
       const addedCartItems = [...cartItems];
       addedCartItems[savedCartItems].quantity++;
-      setCartItems(addedCartItems);
+
       localStorage.setItem('cartItems', JSON.stringify(addedCartItems));
 
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
       localStorage.setItem('cartItems', JSON.stringify([...cartItems, { ...product, quantity: 1 }]));
     }
   };
@@ -34,7 +31,6 @@ export default function CartPage() {
   const removeCartItem = (index) => {
     const removedCartItem = [...cartItems];
     removedCartItem.splice(index, 1);
-    setCartItems(removedCartItem);
     localStorage.setItem('cartItems', JSON.stringify(removedCartItem));
   };
   
