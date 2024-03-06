@@ -15,17 +15,11 @@ export default function CartPage() {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    const savedCartItems = cartItems.findIndex((item) => item.id === product.id);
-    if (savedCartItems !== -1) {
+    const handleAddToCart = (product, quantity = 1) => {
+      // Dispatch the addToCart action with the product and quantity
+      dispatch(addToCart({ ...product, quantity }));
+    };
 
-      const addedCartItems = [...cartItems];
-      addedCartItems[savedCartItems].quantity++;
-
-      localStorage.setItem('cartItems', JSON.stringify(addedCartItems));
-
-    } else {
-      localStorage.setItem('cartItems', JSON.stringify([...cartItems, { ...product, quantity: 1 }]));
-    }
   };
 
   const removeCartItem = (index) => {

@@ -16,7 +16,6 @@ const Counter = ({ id }) => {
   return (
     <div>
       <button onClick={handleDecrease}>-</button>
-      {/* Displaying the quantity will be handled elsewhere, as this component just controls actions */}
       <button onClick={handleIncrease}>+</button>
     </div>
   );

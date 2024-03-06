@@ -12,11 +12,10 @@ export default function ProductDetails() {
 
   const cartItems = useSelector((state) => state.cart.cartItems)
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product))
-    dispatch(addCartItem(product))
-    localStorage.setItem('cartItems', JSON.stringify([...cartItems, product]))
-  }
+  const handleAddToCart = (product, quantity = 1) => {
+    dispatch(addToCart({ ...product, quantity }));
+  };
+  
 
   const handleRemoveFromCart = (product) => {
     dispatch(removeCartItem(product))
