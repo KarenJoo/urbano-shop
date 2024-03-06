@@ -11,15 +11,14 @@ export default function ProductDetails() {
   const { data: productData, loading, error } = useFetch(`${PRODUCT_ID_URL}`)
   const dispatch = useDispatch()
 
+  const cartItems = useSelector((state) => state.cart.cartItems)
 
-const cartItems = useSelector(state => state.cart.cartItems);  
-
-const handleAddToCart = (product) => {
-  dispatch(addToCart(product));
-  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  localStorage.setItem('cartItems', JSON.stringify([...cartItems, product]));
-  console.log('Added product:', product); 
-};
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
+    localStorage.setItem('cartItems', JSON.stringify([...cartItems, product]))
+    console.log('Added product:', product)
+  }
 
   if (loading) {
     return <div>Loading...</div>
@@ -36,7 +35,7 @@ const handleAddToCart = (product) => {
   }
 
   return (
-    <div className="productContainer">
+    <div className='productContainer'>
       <div className={styles.productDetailsCard}>
         <div className={styles.productDetailsImage}>
           <img src={product.image.url} alt={product.image.alt} />
@@ -55,7 +54,7 @@ const handleAddToCart = (product) => {
             >
               Add to Cart
             </button>
-            <Counter/>
+            <Counter />
           </div>
         </div>
       </div>

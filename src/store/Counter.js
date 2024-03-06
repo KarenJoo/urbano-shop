@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addCartItem, removeCartItem } from "../store/cartSlice"; // Adjust path as needed
+import { addCartItem, removeCartItem } from "../store/cartSlice"; 
 
 function CartItemCounter({itemId}) {
     const item = useSelector((state) => 
