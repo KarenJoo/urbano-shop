@@ -14,8 +14,7 @@ export default function Navbar() {
   };
 
   const [cartCount, setCartCount] = useState(() => {
-    const storedCartCount = localStorage.getItem('cartCount');
-    return storedCartCount ? parseInt(storedCartCount, 10) : calculateTotalQuantity();
+  
   });
   
   const dropDownMenu = () => {

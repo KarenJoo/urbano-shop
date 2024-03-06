@@ -7,10 +7,7 @@ export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems]);
-
+ 
    // Calculate total quantity in the cart
    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 

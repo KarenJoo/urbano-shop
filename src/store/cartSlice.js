@@ -23,7 +23,8 @@ export const cartSlice = createSlice({
     addCartItem: (state, action) => {
       const index = state.cartItems.findIndex(item => item.id === action.payload.id);
       if (index >= 0) {
-        state.cartItems[index].quantity += 1;
+        // Create a new object with an updated quantity to adhere to immutability
+        state.cartItems[index] = { ...state.cartItems[index], quantity: state.cartItems[index].quantity + action.payload.quantity };
       }
     },
     removeCartItem: (state, action) => {
