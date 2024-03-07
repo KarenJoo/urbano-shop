@@ -1,0 +1,40 @@
+.cartContainer h2,
+h3 {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.cartContainer h2 {
+  margin-top: 50px;
+}
+
+.cartCard {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  border: 1px solid #efefef;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 200px;
+  flex: 1;
+}
+
+.cartCard img {
+  max-width: 30%;
+  min-width: 50%;
+  max-height: 200px;
+}
+
+.cartCardContent {
+  margin-left: 30px;
+}
+
+.cartCardContent p {
+  font-weight: 300;
+  font-size: 12px;
+}

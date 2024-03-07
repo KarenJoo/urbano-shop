@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeCartItem } from '../store/cartSlice';
 import buttonStyles from '../components/Buttons.module.css';
+import styles from './Cart.module.css'
 
 export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -17,13 +18,13 @@ export default function CartPage() {
 
   return (
     <div className="productContainer">
-      <div className="cartContainer">
-        <h2>Cart</h2>
+      <div className={styles.cartContainer}>
+        <h2>Checkout page</h2>
         <h3>Products in cart ({totalQuantity})</h3>
         {cartItems.map((item) => (
-          <div className="cartCard" key={item.id}>
+          <div className={styles.cartCard} key={item.id}>
             <img src={item.image.url} alt={item.image.alt} />
-            <div className="cartCardContent">
+            <div className={styles.cartCardContent}>
               <p>{item.title}</p>
               <p>Price: {item.discountedPrice} NOK</p>
               <p>Quantity: {item.quantity}</p>
