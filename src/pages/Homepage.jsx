@@ -32,23 +32,21 @@ export default function Homepage() {
 );
 
   return (
+    <>
     <div className="productContainer">
-      <h2 className={styles.headerText}>All products</h2>
+      <h2 className={styles.headerText}>Shop Urbano</h2>
       <div className={styles.productList}>
-        {products &&
-          products
-            .slice(0, displayCount)
-            .map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                discountedPrice={product.discountedPrice}
-                img={product.image.url}
-              />
-            ))}
+        {products && products.slice(0, displayCount).map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            discountedPrice={product.discountedPrice}
+            img={product.image.url}
+          />
+        ))}
       </div>
       {products.length > displayCount && (
         <button className={buttonStyles.primaryButton} onClick={handleViewMore}>
@@ -56,5 +54,6 @@ export default function Homepage() {
         </button>
       )}
     </div>
-  )
+  </>
+);
 }

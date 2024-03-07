@@ -1,9 +1,15 @@
 
 
-.productContainer .headerText {
-  margin: 40px auto;
-  font-size: 30px;
+.headerText {
+  margin: 0px auto;
+  margin-top: 400px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 50px;
   font-weight: 600;
+  text-transform: uppercase; 
+
 }
 
 .productContainer h2 {
@@ -11,10 +17,12 @@
   font-weight: 300;
 }
 
+
+
 .productList {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 100px auto;
+  margin-top: 10px auto;
   align-items: center;
   justify-content: center;
 }
