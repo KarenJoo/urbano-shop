@@ -25,6 +25,10 @@ export default function Homepage() {
   const handleViewMore = () => {
     setDisplayCount((prevCount) => prevCount + 6)
   }
+
+
+
+  
   // Filter products based on search term
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -32,14 +36,15 @@ export default function Homepage() {
 
   return (
     <>
-      <div className='productContainer'>
-        <Box pad='medium'>
-          <TextInput
-            placeholder='Search products...'
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-          />
-        </Box>
+     
+      <div className='productContainer'> 
+      <Box pad='medium'>
+        <TextInput
+          placeholder='Search products...'
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+      </Box>
         <h2 className={styles.headerText}>Shop Urbano</h2>
         <div className={styles.productList}>
           {filteredProducts.slice(0, displayCount).map((product) => (
