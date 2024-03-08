@@ -6,6 +6,7 @@ import styles from './Homepage.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import navbarStyles from '../components/Header/Navbar.module.css'
 import { TextInput, Box, Button } from 'grommet'
+import heroImage from '../assets/images/hero.jpg'
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6)
@@ -26,9 +27,6 @@ export default function Homepage() {
     setDisplayCount((prevCount) => prevCount + 6)
   }
 
-
-
-  
   // Filter products based on search term
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -36,15 +34,17 @@ export default function Homepage() {
 
   return (
     <>
-     
-      <div className='productContainer'> 
-      <Box pad='medium'>
-        <TextInput
-          placeholder='Search products...'
-          value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
-        />
-      </Box>
+      <div className={styles.heroContainer}>
+        {' '}
+        <Box pad='medium'>
+          <TextInput
+            placeholder='Search products...'
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+        </Box>
+      </div>
+      <div className='productContainer'>
         <h2 className={styles.headerText}>Shop Urbano</h2>
         <div className={styles.productList}>
           {filteredProducts.slice(0, displayCount).map((product) => (

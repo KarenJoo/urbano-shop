@@ -28,7 +28,6 @@
 
 .cardHeadContent,
 .cardFootContent {
-  height: 100px;
   width: 100%;
   justify-content: center;
   margin: 10px auto;
@@ -43,7 +42,7 @@
 }
 
 .cardFootContent {
-  height: 80px;
+  height: 100px;
 }
 
 .imageContainer {

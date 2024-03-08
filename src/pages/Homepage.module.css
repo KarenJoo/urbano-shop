@@ -1,3 +1,10 @@
+.heroContainer {
+  background-image: url('../assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px; /* Adjust height as needed */
+}
+
 .headerText {
   margin: 20px auto;
   align-items: center;
