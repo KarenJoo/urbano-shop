@@ -22,4 +22,18 @@ export const theme = {
         },
       }
     },
+    textInput: {
+      extend: () => `
+        font-size: 12px;
+        border: 1px solid #efefef;
+        box-shadow: var(--shadow);
+        background-color: #efefef;
+        border-radius: 5px;
+        max-width: 600px;
+        margin: 10px auto;
+        display: flex;
+        padding: 12px 12px;
+        color: #38609d;
+      `,
+    },
   };
