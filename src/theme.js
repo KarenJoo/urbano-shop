@@ -25,9 +25,9 @@ export const theme = {
   textInput: {
     extend: () => `
       font-size: 12px;
-      border: 1px solid #000;
+      border: 1px solid #efefef;
       width: 100%;
-      background-color: #efefef95;
+      background-color: #efefef98;
       border-radius: 5px;
       max-width: 50%;
       min-width: 40%;
@@ -37,7 +37,7 @@ export const theme = {
       padding: 12px 12px;
       color: #000;
       &::placeholder {
-        color: #000; 
+        color: #efefef; 
       }
     `,
   },
