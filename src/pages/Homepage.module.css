@@ -2,7 +2,19 @@
   background-image: url('../assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
-  height: 500px; /* Adjust height as needed */
+  height: 600px;
+}
+
+.heroBanner {
+  background-color: var(--bg-color);
+  padding: 10px;
+ 
+}
+
+.heroBanner h3 {
+  font-weight: 300;
+  font-size: 15px;
+  margin: 0;
 }
 
 .headerText {

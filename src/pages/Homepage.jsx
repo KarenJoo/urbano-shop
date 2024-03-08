@@ -35,6 +35,9 @@ export default function Homepage() {
   return (
     <>
       <div className={styles.heroContainer}>
+        <div className={styles.heroBanner}>
+         <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
+        </div>
         {' '}
         <Box pad='medium'>
           <TextInput

@@ -31,7 +31,7 @@ export const theme = {
       border-radius: 5px;
       max-width: 50%;
       min-width: 40%;
-      margin: 120px auto;
+      margin: 150px auto;
       margin-left: 50px;
       display: flex;
       padding: 12px 12px;
