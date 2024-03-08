@@ -38,6 +38,7 @@ export default function Homepage() {
         <div className={styles.heroBanner}>
          <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
         </div>
+        <h1>Shop great deals</h1>
         {' '}
         <Box pad='medium'>
           <TextInput

@@ -5,10 +5,18 @@
   height: 600px;
 }
 
+.heroContainer h1 {
+  color: #efefef;
+  margin-top: 150px;
+  padding-left: 80px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px #000;
+}
+
 .heroBanner {
   background-color: var(--bg-color);
   padding: 10px;
- 
 }
 
 .heroBanner h3 {
