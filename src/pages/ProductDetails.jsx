@@ -1,7 +1,5 @@
-// ProductDetails.jsx
-
-import React from 'react'
 import useFetch from '../hooks/useFetch'
+import { PRODUCTS_URL } from '../utils/api'
 import styles from '../pages/ProductDetails.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,9 +8,9 @@ import Counter from '../store/Counter'
 import { useParams } from 'react-router-dom'
 
 export default function ProductDetails() {
-  const { id } = useParams()
-  const API_URL = `https://v2.api.noroff.dev/online-shop/${id}`
-  const { data: productData, loading, error } = useFetch(API_URL)
+  const { id } = useParams();
+  const API_URL = `${PRODUCTS_URL}/${id}`;
+  const { data: productData, loading, error } = useFetch(API_URL);
 
   const dispatch = useDispatch()
   const cartItems = useSelector((state) => state.cart.cartItems)
