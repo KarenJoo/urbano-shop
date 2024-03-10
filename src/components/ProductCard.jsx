@@ -5,7 +5,7 @@ import OnSale from './OnSale';
 import styleButtons from '../components/Buttons.module.css';
 
 export default function ProductCard({ product }) {
-  const { image, title, description, price, discountedPrice } = product;
+  const { id, image, title, description, price, discountedPrice } = product;
 
   return (
     <div className={styles.productCard}>
@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
           <h4 className={price !== discountedPrice ? styles.onSale : ''}>{price} NOK</h4>
           <OnSale price={price} discountedPrice={discountedPrice} />
         </div>          
-        <Link to="/product" className={styleButtons.primaryButton}>View Product</Link>
+        <Link to={`/product/${id}`} className={styleButtons.primaryButton}>View Product</Link>
 
       </div>
     </div>

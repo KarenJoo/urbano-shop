@@ -1,3 +1,5 @@
+// useFetch.js
+
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
@@ -14,9 +16,9 @@ const useFetch = (url) => {
         }
         const responseData = await response.json();
         setData(responseData);
-        setLoading(false);
       } catch (error) {
-        setError(error);
+        setError('Failed to fetch data. Please try again later.'); // Provide a more descriptive error message
+      } finally {
         setLoading(false);
       }
     };
@@ -24,6 +26,7 @@ const useFetch = (url) => {
     fetchData();
 
     return () => {
+      // Cleanup function (if needed)
     };
   }, [url]); 
 
