@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import { Route, Routes } from 'react-router-dom'
 import { Grommet } from 'grommet'
 import { theme } from './theme'
