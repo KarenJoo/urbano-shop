@@ -12,6 +12,7 @@ export default function ProductDetails() {
   const API_URL = `${PRODUCTS_URL}/${id}`;
   const { data: productData, loading, error } = useFetch(API_URL);
 
+
   const dispatch = useDispatch()
   const cartItems = useSelector((state) => state.cart.cartItems)
 
@@ -41,7 +42,7 @@ export default function ProductDetails() {
   const product = productData.data
 
   return (
-    <div className='productContainer'>
+    <div className="productContainer">
       <div className={styles.productDetailsCard}>
         <div className={styles.productDetailsImage}>
           <img src={product.image.url} alt={product.image.alt} />
@@ -54,10 +55,7 @@ export default function ProductDetails() {
           <div className={styles.productDetailsFoot}>
             <h4>{product.price} NOK</h4>
             <h3>Sale: {product.discountedPrice} NOK</h3>
-            <button
-              onClick={() => addProductToCart(product)}
-              className={buttonStyles.primaryButton}
-            >
+            <button onClick={() => addProductToCart(product)} className={buttonStyles.primaryButton}>
               Add to Cart
             </button>
             <Counter />
@@ -68,15 +66,17 @@ export default function ProductDetails() {
       <div className={styles.reviewsContainer}>
         {product.reviews && product.reviews.length > 0 ? (
           product.reviews.map((review) => (
-            <div key={review.id} className={styles.review}>
-              <div className={styles.reviewHead}>
-                <p>Rating: {review.rating}</p>
-              </div>
-              <div className={styles.reviewFoot}>
-                <p>
-                  <strong>{review.username}</strong>
-                </p>
-                <p>{review.description}</p>
+            <div key={review.id} className={styles.singleReview}>
+              <div className={styles.review}>
+                <div className={styles.reviewHead}>
+                  <p>Rating: {review.rating}</p>
+                </div>
+                <div className={styles.reviewFoot}>
+                  <p>
+                    <strong>{review.username}</strong>
+                  </p>
+                  <p className={styles.reviewDescription}>{review.description}</p>
+                </div>
               </div>
             </div>
           ))
@@ -85,5 +85,5 @@ export default function ProductDetails() {
         )}
       </div>
     </div>
-  )
+  );
 }

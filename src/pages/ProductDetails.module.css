@@ -73,6 +73,7 @@
 .reviewHeader {
   margin: 0 auto;
   padding: 20px;
+  max-width: 40%;
 }
 
 .reviewsContainer {
@@ -80,12 +81,17 @@
   border: 1px solid #efefef;
   margin: 0 auto;
   margin-bottom: 50px;
-  width: 60%;
+  width: 80%;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   box-shadow: var(--shadow);
+}
+
+.singleReview {
+  margin-top: 10px;
 }
 
 .review {
@@ -93,14 +99,22 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin: 10px auto;
+}
+
+.reviewDescription {
+  width: 60%;
 }
 
 .reviewFoot {
   display: flex;
+  max-width: 80%;
   box-sizing: border-box;
   margin: 0px auto;
+  border-bottom: 0.1px solid #000;
 }
 
 .reviewFoot p {
   padding-right: 20px;
+  margin-bottom: 40px;
 }
