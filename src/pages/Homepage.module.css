@@ -54,7 +54,7 @@
   .productContainer {
     height: auto;
     min-width: 90%;
-    width: 100px;
+    max-width: 90%;
   }
 
   .productList {
