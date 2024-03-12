@@ -1,6 +1,12 @@
 .menuAndCartContainer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.linkCartContainer {
+  display: flex;
+  justify-content: end;
+  width: 100%;
 }
 
 .navbar {
@@ -45,10 +51,13 @@ button {
 .cartIcon {
   height: 25px;
   width: 25px;
+  margin-top: 12px;
 }
 
 .cartCount {
   position: relative;
+  top: -40px;
+  left: 4px;
 }
 
 .cartCount p {
@@ -66,6 +75,7 @@ button {
 @media only screen and (max-width: 783px) {
   .menuAndCartContainer {
     display: flex;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -132,11 +142,12 @@ button {
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: 10px;
   }
 
   .cartCount p {
     position: absolute;
-    top: -55px;
+    top: -22px;
     left: 10px;
   }
 }
