@@ -83,7 +83,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
   }
   .navbar h1 {
     font-size: 2em;
@@ -96,7 +96,7 @@ button {
     width: 100%;
     padding: 20px 0;
     position: absolute;
-    top: 75px;
+    top: 85px;
     left: 0;
     z-index: 10;
   }

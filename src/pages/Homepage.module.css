@@ -8,7 +8,9 @@
 .heroContainer h1 {
   color: #efefef;
   margin-top: 150px;
-  padding-left: 80px;
+  padding-left: 70px;
+  font-size: 40px;
+  max-width: 600px;
   margin-bottom: 0px;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px #1010106e;
@@ -30,7 +32,7 @@
   align-items: center;
   text-align: center;
   display: flex;
-  font-size: 50px;
+  font-size: 2em;
   font-weight: 800;
   color: #efefef;
   text-transform: uppercase;
@@ -66,5 +68,9 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+  }
+
+  .heroContainer h1 {
+    font-size: 20px;;
   }
 }
