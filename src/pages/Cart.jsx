@@ -24,7 +24,10 @@ export default function CartPage() {
     <div className='productContainer'>
       <div className={styles.cartContainer}>
         <h2 className='headerTextDark'>Cart</h2>
-        <h3 className={styles.cartParagraph}> Products in cart ({totalQuantity})</h3>
+        <h3 className={styles.cartParagraph}>
+          {' '}
+          Products in cart ({totalQuantity})
+        </h3>
         {cartItems.map((item) => (
           <Link
             to={`/product/${item.id}`}
@@ -37,7 +40,7 @@ export default function CartPage() {
               <p>Price: {item.discountedPrice} NOK</p>
               <p>Quantity: {item.quantity}</p>
               <button
-                className={buttonStyles.primaryButton}
+                className={buttonStyles.cartItemButton}
                 onClick={() => handleRemoveCartItem(item.id)}
               >
                 Remove
@@ -45,8 +48,11 @@ export default function CartPage() {
             </div>
           </Link>
         ))}
+        <div className={styles.totalSum}>Total Sum: {totalSum} NOK{' '}   
+        <Link to={`/`}><p>Shop more</p></Link>
+        <Link to={`/checkout`} className={buttonStyles.primaryButton}>View Product</Link></div>
       </div>
-      <div className={styles.totalSum}>Total Sum: {totalSum} NOK</div>{' '}
+   
     </div>
   )
 }
