@@ -35,6 +35,24 @@ img {
   min-height: 100vh;
 }
 
+.headerTextDark,
+.headerText {
+  margin: 20px auto;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--bg-color);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px #979797;
+}
+
+.headerTextDark {
+  color: #3c3b3b;
+  text-transform: lowercase;
+}
+
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 783px) {
   body {

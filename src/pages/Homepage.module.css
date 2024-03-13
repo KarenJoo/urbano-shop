@@ -27,17 +27,6 @@
   margin: 0;
 }
 
-.headerText {
-  margin: 20px auto;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  font-size: 2em;
-  font-weight: 800;
-  color: #efefef;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px #979797;
-}
 
 .productContainer h2 {
   margin: 10px auto;

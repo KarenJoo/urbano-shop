@@ -23,8 +23,8 @@ export default function CartPage() {
   return (
     <div className='productContainer'>
       <div className={styles.cartContainer}>
-        <h2>Checkout page</h2>
-        <h3>Products in cart ({totalQuantity})</h3>
+        <h2 className='headerTextDark'>Cart</h2>
+        <h3 className={styles.cartParagraph}> Products in cart ({totalQuantity})</h3>
         {cartItems.map((item) => (
           <Link
             to={`/product/${item.id}`}

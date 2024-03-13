@@ -36,10 +36,9 @@ export default function Homepage() {
     <>
       <div className={styles.heroContainer}>
         <div className={styles.heroBanner}>
-         <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
+          <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
         </div>
-        <h1>Shop great deals</h1>
-        {' '}
+        <h1>Shop great deals</h1>{' '}
         <Box pad='medium'>
           <TextInput
             placeholder='Search products...'
@@ -49,7 +48,7 @@ export default function Homepage() {
         </Box>
       </div>
       <div className='productContainer'>
-        <h2 className={styles.headerText}>Shop Urbano</h2>
+        <h2 className='headerText'>Shop Urbano</h2>
         <div className={styles.productList}>
           {filteredProducts.slice(0, displayCount).map((product) => (
             <ProductCard
