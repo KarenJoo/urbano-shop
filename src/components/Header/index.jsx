@@ -26,7 +26,10 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <h1>Urbano</h1>
+      <Link to={`/`}>
+        {' '}
+        <h1>Urbano</h1>
+      </Link>
       <div className={styles.linkCartContainer}>
         <div className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}>
           <Link to='/'>Home</Link>
