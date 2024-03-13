@@ -2,15 +2,17 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeCartItem } from '../store/cartSlice';
 import buttonStyles from '../components/Buttons.module.css';
-import styles from './Cart.module.css'
+import styles from './Cart.module.css';
+import { calculateCart } from '../store/cartCalculation';
 
 export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
  
-   // Calculate total quantity in the cart
-   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalSum = calculateCart(cartItems);
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
 
   const handleRemoveCartItem = (id) => {
     dispatch(removeCartItem({ id }));
@@ -38,6 +40,6 @@ export default function CartPage() {
           </div>
         ))}
       </div>
-    </div>
+      <div className={styles.totalSum}>Total Sum: {totalSum} NOK</div>    </div>
   );
 }
