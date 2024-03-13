@@ -1,4 +1,3 @@
-
 .cartContainer {
   background-color: #efefefbc;
   width: 80%;
@@ -33,6 +32,7 @@ h3 {
   min-width: 350px;
   max-height: 200px;
   flex: 1;
+  text-decoration: none;
 }
 
 .cartCard img {
@@ -46,28 +46,30 @@ h3 {
 }
 
 .cartCardContent p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 12px;
+  margin: 5px;
+  color: #000;
 }
 
 @media only screen and (max-width: 783px) {
-.cartContainer {
-  min-width: 90%;
-}
-.cartCard {
-  min-height: 200px;
-  min-width: 100px;
-}
+  .cartContainer {
+    min-width: 90%;
+    padding-bottom: 40px;
+  }
+  .cartCard {
+    min-height: 200px;
+    min-width: 100px;
+  }
 
-.cartCardContent {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
+  .cartCardContent {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 
-.cartCard img {
-  min-height: 200px;
-  min-width: 40%;
-}
-
+  .cartCard img {
+    min-height: 200px;
+    min-width: 40%;
+  }
 }
