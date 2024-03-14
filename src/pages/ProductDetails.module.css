@@ -73,7 +73,7 @@
 .reviewHeader {
   margin: 0 auto;
   padding: 20px;
-  max-width: 40%;
+  max-width: 200px;
 }
 
 .reviewsContainer {
@@ -102,13 +102,9 @@
   margin: 10px auto;
 }
 
-.reviewDescription {
-  width: 60%;
-}
-
 .reviewFoot {
   display: flex;
-  max-width: 80%;
+  max-width: 90%;
   box-sizing: border-box;
   margin: 0px auto;
   border-bottom: 0.1px solid #000;
@@ -116,6 +112,20 @@
 
 .reviewFoot p {
   padding-right: 20px;
+  width: 300px;
   margin-bottom: 40px;
 }
 
+@media only screen and (max-width: 783px) {
+  .reviewFoot {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviewFoot p {
+    width: 100%;
+    align-items: center;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
