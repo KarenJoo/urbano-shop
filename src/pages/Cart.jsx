@@ -40,7 +40,7 @@ export default function CartPage() {
               <p>Price: {item.discountedPrice} NOK</p>
               <p>Quantity: {item.quantity}</p>
               <button
-                className={buttonStyles.cartItemButton}
+                className={buttonStyles.smallButton}
                 onClick={() => handleRemoveCartItem(item.id)}
               >
                 Remove

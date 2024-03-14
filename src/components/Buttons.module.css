@@ -1,3 +1,4 @@
+.smallButton,
 .cartItemButton,
 .itemButton,
 .filterButton,
@@ -38,11 +39,12 @@
 }
 
 @media only screen and (max-width: 783px) {
-  .primaryButton {
+  .smallButton {
     font-size: 12px;
-    height: 20px;
+    height: 45px;
     width: 100px;
     margin: 20px auto;
+    max-width: 300px;
   }
 
 
