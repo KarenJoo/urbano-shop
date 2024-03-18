@@ -3,7 +3,7 @@ export const calculateCart = (cartItems) => {
         return total + (item.quantity * item.discountedPrice); 
     }, 0);
 
-    const formattedTotalSum = totalSum.toFixed(2);
+    const formatSum = totalSum.toFixed(2);
 
-    return parseFloat(formattedTotalSum);
+    return parseFloat(formatSum);
 };

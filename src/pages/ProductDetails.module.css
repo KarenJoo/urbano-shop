@@ -88,6 +88,7 @@
   justify-content: center;
   text-align: center;
   box-shadow: var(--shadow);
+  max-width: 600px;
 }
 
 .singleReview {

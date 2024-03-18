@@ -5,6 +5,7 @@ import buttonStyles from '../components/Buttons.module.css'
 import styles from './Cart.module.css'
 import { calculateCart } from '../store/cartCalculation'
 import { Link } from 'react-router-dom'
+import { clearCart } from '../store/cartSlice'
 
 export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.cartItems)
@@ -18,6 +19,11 @@ export default function CartPage() {
 
   const handleRemoveCartItem = (id) => {
     dispatch(removeCartItem({ id }))
+  }
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+    localStorage.removeItem('cartItems')
   }
 
   return (
@@ -48,11 +54,20 @@ export default function CartPage() {
             </div>
           </Link>
         ))}
-        <div className={styles.totalSum}>Total Sum: {totalSum} NOK{' '}   
-        <Link to={`/`}><p>Shop more</p></Link>
-        <Link to={`/checkout`} className={buttonStyles.primaryButton}>View Product</Link></div>
+        <div className={styles.totalSum}>
+          Total Sum: {totalSum} NOK{' '}
+          <Link to={`/`}>
+            <p>Shop more</p>
+          </Link>
+          <Link
+            to={`/checkout`}
+            className={buttonStyles.primaryButton}
+            onClick={handleClearCart}
+          >
+            Checkout
+          </Link>
+        </div>
       </div>
-   
     </div>
   )
 }

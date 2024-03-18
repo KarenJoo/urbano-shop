@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Checkout() {
   return (
-    <div>Checkout</div>
+    <div className='productContainer'>
+         <div>Checkout</div>
+    </div>
+ 
   )
 }

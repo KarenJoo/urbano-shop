@@ -81,7 +81,7 @@ export default function ProductDetails() {
             </div>
           ))
         ) : (
-          <p>No reviews available.</p>
+          <p>This product have no reviews.</p>
         )}
       </div>
     </div>
