@@ -26,19 +26,24 @@ export default function Homepage() {
     setDisplayCount((prevCount) => prevCount + 6);
   };
 
-  const handleFilterProducts = () => {
-    setDisplaySale(!displaySale);
-    console.log('displaySale:', !displaySale);
+  const handleAllProducts = () => {
+    setDisplaySale(false);
   };
 
-  // Filter products based on search term and displaySale
+  const handleProductsOnSale = () => {
+    setDisplaySale(true);
+  };
+
+
   const displaySearchProducts = products.filter((product) => {
     const displaySearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) 
       
-    const isOnSale = product.discountedPrice && product.discountedPrice !== product.price;
-    return displaySearch && (displaySale || isOnSale);
-    });
-
+    if (displaySale) {
+      return displaySearch && product.discountedPrice && product.discountedPrice !== product.price;
+    } else {
+      return displaySearch;
+    }
+  });
 
   return (
     <>
@@ -58,11 +63,17 @@ export default function Homepage() {
       <div className='productContainer'>
         <h2 className='headerText'>Shop Urbano</h2>
         <button
-          className={buttonStyles.primaryButton}
-          onClick={handleFilterProducts}
-        >
-          {displaySale ? 'All products' : 'Products on sale'}
-        </button>
+            className={`${buttonStyles.primaryButton} ${displaySale ? '' : buttonStyles.active}`}
+            onClick={handleAllProducts}
+          >
+            All Products
+          </button>
+          <button
+            className={`${buttonStyles.primaryButton} ${displaySale ? buttonStyles.active : ''}`}
+            onClick={handleProductsOnSale}
+          >
+            Products on Sale
+          </button>
         <div className={styles.productList}>
           {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard
