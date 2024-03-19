@@ -36,7 +36,7 @@ export default function Homepage() {
     const displaySearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) 
       
     const isOnSale = product.discountedPrice && product.discountedPrice !== product.price;
-    return displaySearch && (displaySale ? true : isOnSale);
+    return displaySearch && (displaySale || isOnSale);
     });
 
 
