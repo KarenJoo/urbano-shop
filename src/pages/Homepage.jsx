@@ -58,6 +58,7 @@ export default function Homepage() {
       </div>
       <div className='productContainer'>
         <h2 className='headerText'>Shop Urbano</h2>
+        <div className={styles.filterContainer}>
         <button
           className={`${buttonStyles.primaryButton} ${displaySale ? '' : buttonStyles.active}`}
           onClick={handleAllProducts}
@@ -69,7 +70,7 @@ export default function Homepage() {
           onClick={handleProductsOnSale}
         >
           Products on Sale
-        </button>
+        </button></div>
         <div className={styles.productList}>
           {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard
