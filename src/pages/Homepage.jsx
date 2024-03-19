@@ -1,36 +1,44 @@
-import React, { useState } from 'react'
-import ProductCard from '../components/ProductCard'
-import useFetch from '../hooks/useFetch'
-import { PRODUCTS_URL } from '../utils/api'
-import styles from './Homepage.module.css'
-import buttonStyles from '../components/Buttons.module.css'
-import navbarStyles from '../components/Header/Navbar.module.css'
-import { TextInput, Box, Button } from 'grommet'
-import heroImage from '../assets/images/hero.jpg'
+import React, { useState } from 'react';
+import ProductCard from '../components/ProductCard';
+import useFetch from '../hooks/useFetch';
+import { PRODUCTS_URL } from '../utils/api';
+import styles from './Homepage.module.css';
+import buttonStyles from '../components/Buttons.module.css';
+import { TextInput, Box } from 'grommet';
 
 export default function Homepage() {
-  const [displayCount, setDisplayCount] = useState(6)
-  const [searchTerm, setSearchTerm] = useState('')
-  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`)
+  const [displayCount, setDisplayCount] = useState(6);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [displaySale, setDisplaySale] = useState(false);
+  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
 
-  const products = productData.data
+  const products = productData.data;
 
   const handleViewMore = () => {
-    setDisplayCount((prevCount) => prevCount + 6)
-  }
+    setDisplayCount((prevCount) => prevCount + 6);
+  };
 
-  // Filter products based on search term
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+  const handleFilterProducts = () => {
+    setDisplaySale(!displaySale);
+    console.log('displaySale:', !displaySale);
+  };
+
+  // Filter products based on search term and displaySale
+  const displaySearchProducts = products.filter((product) => {
+    const displaySearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) 
+      
+    const isOnSale = product.discountedPrice && product.discountedPrice !== product.price;
+    return displaySearch && (displaySale ? true : isOnSale);
+    });
+
 
   return (
     <>
@@ -38,7 +46,7 @@ export default function Homepage() {
         <div className={styles.heroBanner}>
           <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
         </div>
-        <h1>Shop great deals</h1>{' '}
+        <h1>Shop great deals</h1>
         <Box pad='medium'>
           <TextInput
             placeholder='Search products...'
@@ -49,8 +57,14 @@ export default function Homepage() {
       </div>
       <div className='productContainer'>
         <h2 className='headerText'>Shop Urbano</h2>
+        <button
+          className={buttonStyles.primaryButton}
+          onClick={handleFilterProducts}
+        >
+          {displaySale ? 'All products' : 'Products on sale'}
+        </button>
         <div className={styles.productList}>
-          {filteredProducts.slice(0, displayCount).map((product) => (
+          {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -62,7 +76,7 @@ export default function Homepage() {
             />
           ))}
         </div>
-        {filteredProducts.length > displayCount && (
+        {displaySearchProducts.length > displayCount && (
           <button
             className={buttonStyles.primaryButton}
             onClick={handleViewMore}
@@ -72,5 +86,5 @@ export default function Homepage() {
         )}
       </div>
     </>
-  )
+  );
 }
