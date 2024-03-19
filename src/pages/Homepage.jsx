@@ -1,49 +1,45 @@
-import React, { useState } from 'react';
-import ProductCard from '../components/ProductCard';
-import useFetch from '../hooks/useFetch';
-import { PRODUCTS_URL } from '../utils/api';
-import styles from './Homepage.module.css';
-import buttonStyles from '../components/Buttons.module.css';
-import { TextInput, Box } from 'grommet';
+import React, { useState } from 'react'
+import ProductCard from '../components/ProductCard'
+import useFetch from '../hooks/useFetch'
+import { PRODUCTS_URL } from '../utils/api'
+import styles from './Homepage.module.css'
+import buttonStyles from '../components/Buttons.module.css'
+import { TextInput, Box } from 'grommet'
+import { filterProducts, searchProducts } from '../utils/filterAndSearch'
 
 export default function Homepage() {
-  const [displayCount, setDisplayCount] = useState(6);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [displaySale, setDisplaySale] = useState(false);
-  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`);
+  const [displayCount, setDisplayCount] = useState(6)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [displaySale, setDisplaySale] = useState(false)
+  const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`)
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message}</div>
   }
 
-  const products = productData.data;
+  const products = productData.data
 
   const handleViewMore = () => {
-    setDisplayCount((prevCount) => prevCount + 6);
-  };
+    setDisplayCount((prevCount) => prevCount + 6)
+  }
 
   const handleAllProducts = () => {
-    setDisplaySale(false);
-  };
+    setDisplaySale(false)
+  }
 
   const handleProductsOnSale = () => {
-    setDisplaySale(true);
-  };
+    setDisplaySale(true)
+  }
 
-
-  const displaySearchProducts = products.filter((product) => {
-    const displaySearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) 
-      
-    if (displaySale) {
-      return displaySearch && product.discountedPrice && product.discountedPrice !== product.price;
-    } else {
-      return displaySearch;
-    }
-  });
+  const displaySearchProducts = filterProducts(
+    products,
+    searchTerm,
+    displaySale,
+  )
 
   return (
     <>
@@ -63,17 +59,17 @@ export default function Homepage() {
       <div className='productContainer'>
         <h2 className='headerText'>Shop Urbano</h2>
         <button
-            className={`${buttonStyles.primaryButton} ${displaySale ? '' : buttonStyles.active}`}
-            onClick={handleAllProducts}
-          >
-            All Products
-          </button>
-          <button
-            className={`${buttonStyles.primaryButton} ${displaySale ? buttonStyles.active : ''}`}
-            onClick={handleProductsOnSale}
-          >
-            Products on Sale
-          </button>
+          className={`${buttonStyles.primaryButton} ${displaySale ? '' : buttonStyles.active}`}
+          onClick={handleAllProducts}
+        >
+          All Products
+        </button>
+        <button
+          className={`${buttonStyles.primaryButton} ${displaySale ? buttonStyles.active : ''}`}
+          onClick={handleProductsOnSale}
+        >
+          Products on Sale
+        </button>
         <div className={styles.productList}>
           {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard
@@ -97,5 +93,5 @@ export default function Homepage() {
         )}
       </div>
     </>
-  );
+  )
 }
