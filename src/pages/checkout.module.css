@@ -1,0 +1,23 @@
+.checkoutContainer {
+    background-color: #efefefbc;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    justify-content: center;
+    margin: 100px auto;
+  }
+
+  .checkoutContainer h5,
+  .checkoutContainer h1 {
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .checkoutContainer h5 {
+font-weight: 400;
+font-size: 20px;
+margin-top: 0px;
+margin-bottom: 60px;    
+  }
