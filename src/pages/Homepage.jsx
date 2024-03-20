@@ -11,6 +11,7 @@ export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
   const [displaySale, setDisplaySale] = useState(false)
+  const [activeButton, setActiveButton] = useState('all');
   const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`)
 
   if (loading) {
@@ -41,6 +42,11 @@ export default function Homepage() {
     displaySale,
   )
 
+  const handleButtonClick = (buttonType) => {
+    setDisplaySale(buttonType === 'sale'); // Set displaySale based on buttonType
+    setActiveButton(buttonType); // Set active button
+  };
+
   return (
     <>
       <div className={styles.heroContainer}>
@@ -60,17 +66,17 @@ export default function Homepage() {
         <h2 className='headerText'>Shop Urbano</h2>
         <div className={styles.filterContainer}>
         <button
-          className={`${buttonStyles.primaryButton} ${displaySale ? '' : buttonStyles.active}`}
-          onClick={handleAllProducts}
-        >
-          All Products
-        </button>
-        <button
-          className={`${buttonStyles.primaryButton} ${displaySale ? buttonStyles.active : ''}`}
-          onClick={handleProductsOnSale}
-        >
-          Products on Sale
-        </button></div>
+            className={`${buttonStyles.primaryButton} ${activeButton === 'all' ? buttonStyles.active : ''}`}
+            onClick={() => handleButtonClick('all')}
+          >
+            All Products
+          </button>
+          <button
+            className={`${buttonStyles.primaryButton} ${activeButton === 'sale' ? buttonStyles.active : ''}`}
+            onClick={() => handleButtonClick('sale')}
+          >
+            Products on Sale
+          </button></div>
         <div className={styles.productList}>
           {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard
