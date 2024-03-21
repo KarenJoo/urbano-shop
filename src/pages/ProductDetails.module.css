@@ -97,7 +97,8 @@
 }
 
 .singleReview {
-  border-top: 0.1px solid #efefef;
+  width: 100%;
+  margin: auto;
 }
 .reviewFoot {
   display: flex;
@@ -107,16 +108,22 @@
   max-width: 600px;
 }
 
+.reviewName {
+  flex: 1; 
+}
+
+.reviewDescription {
+  flex: 3; 
+  text-align: left;
+}
+
 .reviewFoot p {
   padding-right: 20px;
   margin-bottom: 40px;
   margin-top: 30px;
 }
 
-.reviewDescription p,
-.reviewName p {
-  width: 100%;
-}
+
 
 @media only screen and (max-width: 783px) {
   .reviewFoot {
