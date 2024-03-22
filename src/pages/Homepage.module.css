@@ -51,15 +51,20 @@
   box-shadow: var(--shadow);
   padding: 50px;
   border: 1px solid #efefef;
-width: 90vw;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-  margin: 20px auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
   color: #000;
   font-size: 30px;
+}
 
+.clockContainer h3 {
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-weight: 300;
 }
 
 @media only screen and (max-width: 783px) {

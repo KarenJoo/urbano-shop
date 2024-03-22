@@ -2,6 +2,7 @@
 .cartItemButton,
 .itemButton,
 .filterButton,
+.signUp,
 .primaryButton {
   margin: 30px auto;
   width: 90%;
@@ -11,7 +12,7 @@
   display: flex;
   margin-bottom: 20px;
   padding: 15px 10px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   text-decoration: none;
   cursor: pointer;
@@ -38,13 +39,22 @@
   margin: 0px;
 }
 
-
 .active {
   color: #efefef;
   background-color: var(--primary-color);
   border-color: #efefef;
 }
 
+.signUp {
+  background-color: #efefefc0;
+  color: var(--dark);
+  border-color: var(--dark);
+  padding: 0px;
+}
+
+.signUp p {
+  font-size: 15px;
+}
 
 @media only screen and (max-width: 783px) {
   .smallButton {
@@ -54,6 +64,4 @@
     margin: 20px auto;
     max-width: 300px;
   }
-
-
 }

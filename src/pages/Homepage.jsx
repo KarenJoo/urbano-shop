@@ -7,6 +7,7 @@ import buttonStyles from '../components/Buttons.module.css'
 import { TextInput, Box, Clock } from 'grommet'
 import { filterProducts, searchProducts } from '../utils/filterAndSearch'
 import { theme } from '../theme'
+import { Link } from 'react-router-dom'
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6)
@@ -66,11 +67,14 @@ export default function Homepage() {
       <div className='productContainer'>
         <div className={styles.clockContainer}>
           <h2>Spring sale</h2>
-          <p>
+          <h3>
             Something big is coming. Sign up for early access to our new
             collection!
-          </p>
+          </h3>
           <Clock type='digital' className={styles.clock} />
+          <Link to={`/contact`} className={buttonStyles.signUp}>
+            <p> sign up</p>
+          </Link>
         </div>
         <div className={styles.filterContainer}>
           <button
