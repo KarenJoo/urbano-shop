@@ -1,3 +1,4 @@
+
 .cartContainer {
   background-color: #efefefbc;
   width: 80%;
@@ -9,22 +10,24 @@
   margin: 50px auto;
 }
 .cartContainer h2,
-h3 {
-  margin: 0px auto;
+.cartContainer h3 {
+  margin: 20px auto;
   text-align: center;
-}
-
-.cartParagraph {
-  margin-top: 20px;
+  max-width: 600px;
 }
 
 .cartContainer h2 {
   margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 3em;
   text-transform: uppercase;
-
+  font-size: 3em;
 }
+
+.cartParagraph {
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+
 
 .cartCard {
   display: flex;

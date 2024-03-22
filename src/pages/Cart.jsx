@@ -1,30 +1,25 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeCartItem } from '../store/cartSlice'
+import { removeCartItem, clearCart } from '../store/cartSlice'
 import buttonStyles from '../components/Buttons.module.css'
 import styles from './Cart.module.css'
 import { calculateCart } from '../store/cartCalculation'
 import { Link } from 'react-router-dom'
-import { clearCart } from '../store/cartSlice'
 
 export default function CartPage() {
-  const cartItems = useSelector((state) => state.cart.cartItems)
-  const dispatch = useDispatch()
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
 
-  const totalSum = calculateCart(cartItems)
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0,
-  )
+  const totalSum = calculateCart(cartItems);
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const handleRemoveCartItem = (id) => {
-    dispatch(removeCartItem({ id }))
-  }
+    dispatch(removeCartItem({ id }));
+  };
 
   const handleClearCart = () => {
-    dispatch(clearCart())
-    localStorage.removeItem('cartItems')
-  }
+    dispatch(clearCart());
+  };
 
   return (
     <div className='productContainer'>
@@ -59,13 +54,12 @@ export default function CartPage() {
           <Link to={`/`}>
             <p>Shop more</p>
           </Link>
-          <Link
-            to={`/checkout`}
+          <button
             className={buttonStyles.primaryButton}
             onClick={handleClearCart}
           >
             Checkout
-          </Link>
+          </button>
         </div>
       </div>
     </div>
