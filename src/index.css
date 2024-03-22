@@ -24,7 +24,7 @@ img {
   object-fit: cover;
 }
 
-.productContainer {
+/* .productContainer {
   display: flex;
   flex-direction: column;
   background-image: url('/public/assets/images/bg.jpg');
@@ -33,7 +33,7 @@ img {
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-}
+} */
 
 .headerTextDark,
 .headerText {
@@ -50,7 +50,7 @@ img {
 
 .headerTextDark {
   color: #3c3b3b;
-  text-transform: lowercase;
+  text-shadow: none;
 }
 
 /* Small devices (tablets, 768px - 992px) */

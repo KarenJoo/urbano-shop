@@ -25,7 +25,7 @@ export const theme = {
   productContainer: {
     display: 'flex',
     flexDirection: 'column',
-    backgroundImage: 'url("/public/assets/images/bg.jpg")',
+    backgroundImage: 'url("/assets/images/bg.jpg")',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
