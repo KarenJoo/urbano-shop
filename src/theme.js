@@ -22,26 +22,6 @@ export const theme = {
       },
     }
   },
-  productContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundImage: 'url("/public/assets/images/bg.jpg")',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
-    minHeight: '100vh',
-  },
-  cartContainer: {
-    background: '#efefefbc',
-    width: '80%',
-    maxWidth: '800px',
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 2px 2px #888888',
-    justifyContent: 'center',
-    margin: '50px auto',
-  },
   textInput: {
     extend: () => `
       font-size: 12px;

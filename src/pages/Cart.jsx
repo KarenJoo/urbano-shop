@@ -29,7 +29,7 @@ export default function CartPage() {
   return (
     <div className='productContainer'>
       <div className={styles.cartContainer}>
-        <h2 className='headerTextDark'>Cart</h2>
+        <h2>Shopping bag</h2>
         <h3 className={styles.cartParagraph}>
           {' '}
           Products in cart ({totalQuantity})
