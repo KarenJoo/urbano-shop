@@ -50,6 +50,7 @@
   color: var(--dark);
   border-color: var(--dark);
   padding: 0px;
+  margin-top: 50px;
 }
 
 .signUp p {

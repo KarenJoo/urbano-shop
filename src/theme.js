@@ -22,6 +22,17 @@ export const theme = {
       },
     }
   },
+  clock: {
+    digital: {
+      run: 'backward', 
+      size: 'large', 
+      text: {
+        size: 'large', 
+        color: '#000000',
+        fontFamily: 'Lexend, sans-serif',
+      },
+    },
+  },
   textInput: {
     extend: () => `
       font-size: 12px;
