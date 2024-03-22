@@ -35,7 +35,6 @@ img {
   min-height: 100vh;
 } */
 
-.headerTextDark,
 .headerText {
   margin: 20px auto;
   align-items: center;
@@ -48,10 +47,7 @@ img {
   text-shadow: 2px 2px 4px #979797;
 }
 
-.headerTextDark {
-  color: #3c3b3b;
-  text-shadow: none;
-}
+
 
 /* Small devices (tablets, 768px - 992px) */
 @media only screen and (max-width: 783px) {

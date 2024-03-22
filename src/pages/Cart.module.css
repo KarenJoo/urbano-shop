@@ -1,4 +1,4 @@
-.cartContainer {
+/* .cartContainer {
   background-color: #efefefbc;
   width: 80%;
   max-width: 800px;
@@ -7,21 +7,26 @@
   box-shadow: var(--shadow);
   justify-content: center;
   margin: 50px auto;
-}
-.cartContainer h2,
+} */
+h2,
 h3 {
-  margin: 0px auto;
+  margin: 20px auto;
   text-align: center;
+  max-width: 600px;
+}
+
+h2 {
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 3em;
 }
 
 .cartParagraph {
   margin-bottom: 20px;
+  max-width: 600px;
 }
 
-.cartContainer h2 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+
 
 .cartCard {
   display: flex;
