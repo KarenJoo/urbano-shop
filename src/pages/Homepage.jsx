@@ -4,14 +4,15 @@ import useFetch from '../hooks/useFetch'
 import { PRODUCTS_URL } from '../utils/api'
 import styles from './Homepage.module.css'
 import buttonStyles from '../components/Buttons.module.css'
-import { TextInput, Box } from 'grommet'
+import { TextInput, Box, Clock } from 'grommet'
 import { filterProducts, searchProducts } from '../utils/filterAndSearch'
+import { theme } from '../theme'
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6)
   const [searchTerm, setSearchTerm] = useState('')
   const [displaySale, setDisplaySale] = useState(false)
-  const [activeButton, setActiveButton] = useState('all');
+  const [activeButton, setActiveButton] = useState('all')
   const { data: productData, loading, error } = useFetch(`${PRODUCTS_URL}`)
 
   if (loading) {
@@ -43,9 +44,9 @@ export default function Homepage() {
   )
 
   const handleButtonClick = (buttonType) => {
-    setDisplaySale(buttonType === 'sale'); // Set displaySale based on buttonType
-    setActiveButton(buttonType); // Set active button
-  };
+    setDisplaySale(buttonType === 'sale')
+    setActiveButton(buttonType)
+  }
 
   return (
     <>
@@ -63,9 +64,16 @@ export default function Homepage() {
         </Box>
       </div>
       <div className='productContainer'>
-        <h2 className='headerText'>Shop Urbano</h2>
+        <div className={styles.clockContainer}>
+          <h2>Spring sale</h2>
+          <p>
+            Something big is coming. Sign up for early access to our new
+            collection!
+          </p>
+          <Clock type='digital' className={styles.clock} />
+        </div>
         <div className={styles.filterContainer}>
-        <button
+          <button
             className={`${buttonStyles.primaryButton} ${activeButton === 'all' ? buttonStyles.active : ''}`}
             onClick={() => handleButtonClick('all')}
           >
@@ -76,7 +84,8 @@ export default function Homepage() {
             onClick={() => handleButtonClick('sale')}
           >
             Products on Sale
-          </button></div>
+          </button>
+        </div>
         <div className={styles.productList}>
           {displaySearchProducts.slice(0, displayCount).map((product) => (
             <ProductCard

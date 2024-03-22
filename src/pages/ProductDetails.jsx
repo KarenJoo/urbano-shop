@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, addCartItem } from '../store/cartSlice'
 import Counter from '../store/Counter'
 import { useParams } from 'react-router-dom'
-import { Grommet, Box } from 'grommet'
-import { theme } from '../theme'
 
 export default function ProductDetails() {
   const { id } = useParams()
@@ -43,8 +41,8 @@ export default function ProductDetails() {
   const product = productData.data
 
   return (
-    <Grommet>
-      <Box background="url('/assets/images/bg.jpg')" fill="vertical">
+   
+      <div className='productContainer'>
         <div className={styles.productDetailsCard}>
           <div className={styles.productDetailsImage}>
             <img src={product.image.url} alt={product.image.alt} />
@@ -87,7 +85,6 @@ export default function ProductDetails() {
             <p>This product has no reviews.</p>
           )}
         </div>
-      </Box>
-    </Grommet>
+      </div>
   )
 }
