@@ -5,10 +5,10 @@ import buttonStyles from '../components/Buttons.module.css'
 
 export default function Checkout() {
   return (
-    <div className='productContainer'>
-      <div className={styles.checkoutContainer}>
-         <h1>Checkout</h1>
-         <h5>Your order was successful! Thank you for shopping at Urbano.</h5>
+    <div className='parentContainer'>
+      <div className='childContainer'>
+         <h1 className={styles.childHeader}>Checkout</h1>
+         <h5 className={styles.childText}>Your order was successful! Thank you for shopping at Urbano.</h5>
          <Link
             to={`/`}
             className={buttonStyles.primaryButton}
@@ -16,8 +16,7 @@ export default function Checkout() {
           >
             Continue shopping
           </Link>
-          </div>
-        
+        </div>
     </div>
  
   )

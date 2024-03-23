@@ -7,25 +7,28 @@ import { calculateCart } from '../store/cartCalculation'
 import { Link } from 'react-router-dom'
 
 export default function CartPage() {
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems)
+  const dispatch = useDispatch()
 
-  const totalSum = calculateCart(cartItems);
-  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalSum = calculateCart(cartItems)
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  )
 
   const handleRemoveCartItem = (id) => {
-    dispatch(removeCartItem({ id }));
-  };
+    dispatch(removeCartItem({ id }))
+  }
 
   const handleClearCart = () => {
-    dispatch(clearCart());
-  };
+    dispatch(clearCart())
+  }
 
   return (
-    <div className='productContainer'>
-      <div className={styles.cartContainer}>
-        <h2>Shopping bag</h2>
-        <h3 className={styles.cartParagraph}>
+    <div className='parentContainer'>
+      <div className='childContainer'>
+        <h2 className={styles.childHeader}>Shopping bag</h2>
+        <h3 className={styles.childParagraph}>
           {' '}
           Products in cart ({totalQuantity})
         </h3>
@@ -51,15 +54,16 @@ export default function CartPage() {
         ))}
         <div className={styles.totalSum}>
           Total Sum: {totalSum} NOK{' '}
-          <Link to={`/`}>
-            <p>Shop more</p>
-          </Link>
-          <button
+          <Link
+            to={`/checkout`}
             className={buttonStyles.primaryButton}
             onClick={handleClearCart}
           >
             Checkout
-          </button>
+          </Link>
+          <Link to={`/`}>
+            <p>Shop more</p>
+          </Link>
         </div>
       </div>
     </div>

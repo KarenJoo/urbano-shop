@@ -66,7 +66,7 @@ export default function Homepage() {
           />
         </Box>
       </div>
-      <div className='productContainer'>
+      <div className='parentContainer'>
         <div className={styles.clockContainer}>
           <h2>Spring sale</h2>
           <h3>
