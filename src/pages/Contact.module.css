@@ -1,40 +1,43 @@
 form {
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .headForm {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nameContainer {
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
 }
 
 .nameContainer input {
-    width: 85%;
+  width: 90%;
 }
 
-
-
 label {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 textarea,
 input {
-    padding: 10px;
-    border: 2px solid var(--primary-color); 
-    border-radius: 10px;
-    max-width: 700px;
-    width: 90%;
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  font-weight: 300;
 }
