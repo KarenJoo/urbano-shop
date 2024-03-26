@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -6,6 +6,7 @@ import buttonStyles from '../components/Buttons.module.css'
 import styles from './Contact.module.css'
 
 export default function Contact() {
+  const [formSubmitted, setFormSubmitted] = useState(false)
   let firstName, lastName, email, subject, body
 
   const schema = yup.object().shape({
@@ -38,7 +39,9 @@ export default function Contact() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) })
 
-  function onFormSubmit(data) {
+  function onFormSubmit(data, event) {
+    event.preventDefault()
+
     console.log('Form submitted with:', data)
     console.log('Form submitted with:', {
       firstName,
@@ -47,12 +50,18 @@ export default function Contact() {
       subject,
       body,
     })
+    setFormSubmitted(true)
+  }
+
+  function handleFormSubmit(event) {
+    handleSubmit(onFormSubmit)(event)
   }
 
   return (
     <div className='parentContainer'>
       <div className='childContainer'>
-        <form onSubmit={handleSubmit(onFormSubmit)}>
+        <form onSubmit={handleFormSubmit}>
+          {' '}
           <h1>Contact form</h1>
           <div className={styles.headForm}>
             <div className={styles.nameContainer}>
@@ -91,7 +100,6 @@ export default function Contact() {
             </div>
           </div>
           <label htmlFor='email'>Email</label>
-
           <input
             id='email'
             name='email'
@@ -118,7 +126,6 @@ export default function Contact() {
             <p className={styles.error}>{errors.subject.message}</p>
           )}
           <label htmlFor='body'>Message</label>
-
           <textarea
             id='body'
             name='body'
@@ -127,6 +134,11 @@ export default function Contact() {
             {...register('body', { required: true, min: 10, max: 200 })}
           />
           {errors.body && <p className={styles.error}>{errors.body.message}</p>}
+          {formSubmitted && (
+            <h5 className={styles.formSuccess}>
+              Thank you for contacting us! We will respond as fast as we can.
+            </h5>
+          )}
           <button type='submit' className={buttonStyles.primaryButton}>
             Submit
           </button>

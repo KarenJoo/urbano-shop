@@ -41,3 +41,8 @@ input {
   font-size: 12px;
   font-weight: 300;
 }
+
+.formSuccess {
+    font-weight: 300;
+    font-size: 16px;
+}
