@@ -25,26 +25,34 @@ export default function Contact() {
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <h1>Contact form</h1>
           <div className={styles.headForm}>
-          <div className={styles.nameContainer}>
-            <label htmlFor='first-name'>First name</label>
-            <input
-              id='first-name'
-              name='first-name'
-              value={firstName}
-              placeholder='First name'
-              {...register('firstName', { required: true })}
-            />
-          </div>
-          <div className={styles.nameContainer}>
-            <label htmlFor='last-name'>Last name</label>
-            <input
-              id='last-name'
-              name='last-name'
-              value={lastName}
-              placeholder='Last name'
-              {...register('lastName', { required: true })}
-            />
-          </div>
+            <div className={styles.nameContainer}>
+              <label htmlFor='first-name'>First name</label>
+              <input
+                id='first-name'
+                name='first-name'
+                value={firstName}
+                placeholder='First name'
+                {...register('firstName', {
+                  required: true,
+                  minLength: 3,
+                  maxLength: 10,
+                })}
+              />
+            </div>
+            <div className={styles.nameContainer}>
+              <label htmlFor='last-name'>Last name</label>
+              <input
+                id='last-name'
+                name='last-name'
+                value={lastName}
+                placeholder='Last name'
+                {...register('lastName', {
+                  required: true,
+                  minLength: 3,
+                  maxLength: 10,
+                })}
+              />
+            </div>
           </div>
           <label htmlFor='email'>Email</label>
 
@@ -72,7 +80,7 @@ export default function Contact() {
             name='body'
             value={body}
             placeholder='Write here..'
-            {...register('body', { required: true })}
+            {...register('body', { required: true, min: 10, max: 200 })}
           />
           <button type='submit' className={buttonStyles.primaryButton}>
             Submit
