@@ -1,3 +1,40 @@
 form {
     margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.headForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.nameContainer input {
+    width: 85%;
+}
+
+
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+textarea,
+input {
+    padding: 10px;
+    border: 2px solid var(--primary-color); 
+    border-radius: 10px;
+    max-width: 700px;
+    width: 90%;
 }
