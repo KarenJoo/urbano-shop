@@ -4,35 +4,11 @@ import styles from './Contact.module.css'
 import { useForm } from 'react-hook-form'
 
 export default function Contact() {
-  const { register, handleSubmit } = useForm()
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [subject, setSubject] = useState('')
-  const [email, setEmail] = useState('')
-  const [body, setBody] = useState('')
+  const { register, handleSubmit } = useForm();
+  let firstName, lastName, email, subject, body;
 
-  function onFirstNameChange(event) {
-    setFirstName(event.target.value)
-  }
-
-  function onLastNameChange(event) {
-    setLastName(event.target.value)
-  }
-
-  function onEmailChange(event) {
-    setEmail(event.target.value)
-  }
-
-  function onSubjectChange(event) {
-    setSubject(event.target.value)
-  }
-
-  function onBodyChange(event) {
-    setBody(event.target.value)
-  }
-
-  function onFormSubmit(event) {
-    event.preventDefault()
+  function onFormSubmit(data) {
+    data.preventDefault()
 
     console.log('Form submitted with:', {
       firstName,
@@ -46,7 +22,7 @@ export default function Contact() {
   return (
     <div className='parentContainer'>
       <div className='childContainer'>
-        <form className={styles} onSubmit={onFormSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit(onFormSubmit)}>
           <h1>Contact form</h1>
           <label htmlFor='first-name'>First name</label>
           <input
@@ -54,15 +30,14 @@ export default function Contact() {
             name='first-name'
             value={firstName}
             placeholder='Your first name'
-            onChange={onFirstNameChange}
-          />
+            {...register('firstName', { required: true })}          />
           <label htmlFor='last-name'>Last name</label>
           <input
             id='last-name'
             name='last-name'
             value={lastName}
             placeholder='Your last name'
-            onChange={onLastNameChange}
+            {...register('lastName', { required: true })}
           />
 
           <label htmlFor='email'>Email</label>
@@ -72,8 +47,7 @@ export default function Contact() {
             name='email'
             value={email}
             placeholder='Email'
-            onChange={onEmailChange}
-          />
+            {...register('email', { required: true, pattern: /^\S+@\S+$/i })}          />
 
           <label htmlFor='subject'>Subject</label>
           <input
@@ -81,18 +55,16 @@ export default function Contact() {
             name='subject'
             value={subject}
             placeholder='Subject'
-            onChange={onSubjectChange}
-          />
+            {...register('subject', { required: true })}          />
 
           <label htmlFor='body'>Message</label>
 
-          <input
+          <textarea
             id='body'
             name='body'
             value={body}
             placeholder='Write here..'
-            onChange={onBodyChange}
-          />
+            {...register('body', { required: true })}          />
           <button type='submit' className={buttonStyles.primaryButton}>
             Submit
           </button>
