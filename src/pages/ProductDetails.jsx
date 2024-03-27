@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { PRODUCTS_URL } from '../utils/api'
 import styles from '../pages/ProductDetails.module.css'
@@ -11,6 +12,7 @@ export default function ProductDetails() {
   const { id } = useParams()
   const API_URL = `${PRODUCTS_URL}/${id}`
   const { data: productData, loading, error } = useFetch(API_URL)
+  const [btnMessage, setBtnMessage] = useState('')
 
   const dispatch = useDispatch()
   const cartItems = useSelector((state) => state.cart.cartItems)
@@ -24,6 +26,7 @@ export default function ProductDetails() {
     } else {
       dispatch(addToCart({ ...product, quantity: 1 }))
     }
+    setBtnMessage(`${product.title} added to cart.`)
   }
 
   if (loading) {
@@ -61,6 +64,7 @@ export default function ProductDetails() {
               Add to Cart
             </button>
             <Counter />
+            {btnMessage && <p className={styles.btnMessage}>{btnMessage}</p>}
           </div>
         </div>
       </div>
