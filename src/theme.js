@@ -25,19 +25,18 @@ export const theme = {
   textInput: {
     extend: () => `
       font-size: 12px;
-      border: 1px solid #efefef;
+      border: 2px solid #38609d;
       width: 100%;
       background-color: #efefef98;
       border-radius: 5px;
       max-width: 50%;
       min-width: 250px;
       margin: 0px auto;
-      margin-left: 50px;
       display: flex;
       padding: 12px 12px;
-      color: #000;
+      color: #38609d;
       &::placeholder {
-        color: #efefef; 
+        color: #38609d; 
       }
     `,
   },

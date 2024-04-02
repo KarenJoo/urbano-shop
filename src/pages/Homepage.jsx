@@ -54,10 +54,18 @@ export default function Homepage() {
   return (
     <Grommet theme={theme}>
       <div className={styles.heroContainer}>
-        <div className={styles.heroBanner}>
+       <div className={styles.heroBanner}>
           <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
-        </div>
-        <h1>Shop great deals</h1>
+         
+          <Clock type='digital' time={currentTime.toISOString()} />
+          <Link to={`/contact`} className={buttonStyles.signUp}>
+            <p> sign up</p>
+          </Link>
+        </div> 
+       
+      </div>
+      <div className='parentContainer'>
+ <h1 className={styles.searchBar}>Shop great deals</h1>
         <Box pad='medium'>
           <TextInput
             placeholder='Search products...'
@@ -65,19 +73,6 @@ export default function Homepage() {
             onChange={(event) => setSearchTerm(event.target.value)}
           />
         </Box>
-      </div>
-      <div className='parentContainer'>
-        <div className={styles.clockContainer}>
-          <h2>Spring sale</h2>
-          <h3>
-            Something big is coming. Sign up for early access to our new
-            collection!
-          </h3>
-          <Clock type='digital' time={currentTime.toISOString()} />
-          <Link to={`/contact`} className={buttonStyles.signUp}>
-            <p> sign up</p>
-          </Link>
-        </div>
         <div className={styles.filterContainer}>
           <button
             className={`${buttonStyles.primaryButton} ${
