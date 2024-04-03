@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import { useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import cartIcon from '../../assets/icons/shopping-cart.svg'
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const cartItems = useSelector((state) => state.cart.cartItems)
+  const menuClose = useRef(null)
 
   const [cartCount, setCartCount] = useState(calculateTotalQuantity())
 
@@ -18,23 +19,50 @@ export default function Navbar() {
     setMenuOpen(!menuOpen)
   }
 
+  const closeMenu = () => {
+    console.log('Closing menu')
+    setMenuOpen(false)
+  }
+
   useEffect(() => {
     const totalQuantity = calculateTotalQuantity()
     setCartCount(totalQuantity)
     localStorage.setItem('cartCount', totalQuantity.toString())
   }, [cartItems])
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuClose.current && !menuClose.current.contains(event.target)) {
+        setMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   return (
     <nav className={styles.navbar}>
-      <Link to={`/`}>
+      <Link to={`/`} onClick={closeMenu}>
         {' '}
         <h1>Urbano</h1>
       </Link>
       <div className={styles.linkCartContainer}>
-        <div className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}>
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/contact'>Contact</Link>
+        <div
+          ref={menuClose}
+          className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}
+        >
+          <Link to='/' onClick={closeMenu}>
+            Home
+          </Link>
+          <Link to='/about' onClick={closeMenu}>
+            About
+          </Link>
+          <Link to='/contact' onClick={closeMenu}>
+            Contact
+          </Link>
         </div>
         <div className={styles.menuAndCartContainer}>
           <button
