@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, addCartItem } from '../store/cartSlice'
 import Counter from '../store/Counter'
 import { useParams } from 'react-router-dom'
+import errorStyles from '../components/Errors/Errors.module.css'
 
 export default function ProductDetails() {
   const { id } = useParams()
@@ -30,11 +31,21 @@ export default function ProductDetails() {
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div className='parentContainer'>
+        <div className={errorStyles.loader}>Loading...</div>
+      </div>
+    )
   }
 
   if (error) {
-    return <div>Error: Unable to load product details.</div>
+    return (
+      <div className='parentContainer'>
+        <div className={errorStyles.errorContainer}>
+          Error: Unable to load product details.
+        </div>
+      </div>
+    )
   }
 
   if (!productData) {

@@ -9,6 +9,7 @@ import { filterProducts, searchProducts } from '../utils/filterAndSearch'
 import { Link } from 'react-router-dom'
 import { theme } from '../theme.js'
 import useClock from '../hooks/useClock.js'
+import errorStyles from '../components/Errors/Errors.module.css'
 
 export default function Homepage() {
   const [displayCount, setDisplayCount] = useState(6)
@@ -19,7 +20,7 @@ export default function Homepage() {
   const currentTime = useClock()
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div className='parentContainer'><div className={errorStyles.loader}>Loading...</div></div>
   }
 
   if (error) {

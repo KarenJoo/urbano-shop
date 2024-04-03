@@ -1,20 +1,29 @@
 .errorContainer {
-    padding: 20px;
-    text-align: center;
-    background-color: #ffdddd;
-    border-left: 6px solid #f44336;
-    margin: 20px 0;
-    color: #333;
-    
-  }
-  
-  .errorMessage {
-    margin: 15px 0;
-    font-size: 18px;
-  }
+  padding: 20px;
+  text-align: center;
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+  margin: 20px 0;
+  color: #333;
+}
 
-  .homeLink {
+.errorMessage {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.homeLink {
   color: #000;
   text-decoration: none;
   font-weight: 400;
+}
+
+.loader {
+  margin: 50px auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--dark-color);
 }
