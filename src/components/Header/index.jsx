@@ -20,7 +20,6 @@ export default function Navbar() {
   }
 
   const closeMenu = () => {
-    console.log('Closing menu')
     setMenuOpen(false)
   }
 
@@ -69,6 +68,7 @@ export default function Navbar() {
             className={styles.burgerMenu}
             onClick={dropDownMenu}
             aria-label='Toggle navigation'
+            data-testid="burger-menu"
           >
             <span></span>
             <span></span>
