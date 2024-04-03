@@ -2,7 +2,7 @@
 .cartItemButton,
 .itemButton,
 .filterButton,
-.signUp,
+.shopSale,
 .primaryButton {
   margin: 30px auto;
   width: 90%;
@@ -45,16 +45,10 @@
   border-color: #efefef;
 }
 
-.signUp {
-  background-color: #efefefc0;
-  color: var(--dark);
-  border-color: var(--dark);
-  padding: 0px;
-  margin-top: 10px;
-}
-
-.signUp p {
-  font-size: 15px;
+.shopSale {
+  box-shadow: none;
+  background-color: transparent;
+  border-width: 2px;
 }
 
 @media only screen and (max-width: 783px) {

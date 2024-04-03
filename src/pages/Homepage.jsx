@@ -54,18 +54,27 @@ export default function Homepage() {
   return (
     <Grommet theme={theme}>
       <div className={styles.heroContainer}>
-       <div className={styles.heroBanner}>
-          <h3>Are you ready for a Fresh Start? Let's go Spring Sale!</h3>
-         
-          <Clock type='digital' time={currentTime.toISOString()} />
-          <Link to={`/contact`} className={buttonStyles.signUp}>
-            <p> sign up</p>
-          </Link>
-        </div> 
-       
+        <div className={styles.heroBanner}>
+          <h4>Limited editions</h4>
+          <h3>Sale ends soon</h3>
+
+          <Clock
+            className={styles.clock}
+            type='digital'
+            time={currentTime.toISOString()}
+          />
+          <button
+            className={`${buttonStyles.shopSale} ${
+              activeButton === 'sale' ? buttonStyles.active : ''
+            }`}
+            onClick={() => handleButtonClick('sale')}
+          >
+            Shop Sale
+          </button>
+        </div>
       </div>
       <div className='parentContainer'>
- <h1 className={styles.searchBar}>Shop great deals</h1>
+        <h1 className={styles.searchBar}>Find your urban fit</h1>
         <Box pad='medium'>
           <TextInput
             placeholder='Search products...'

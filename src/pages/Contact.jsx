@@ -65,7 +65,7 @@ export default function Contact() {
           <h1>Contact form</h1>
           <div className={styles.headForm}>
             <div className={styles.nameContainer}>
-              <label htmlFor='first-name'>First name</label>
+              <label htmlFor='first-name'>First name*</label>
               <input
                 id='first-name'
                 name='first-name'
@@ -82,7 +82,7 @@ export default function Contact() {
               )}
             </div>
             <div className={styles.nameContainer}>
-              <label htmlFor='last-name'>Last name</label>
+              <label htmlFor='last-name'>Last name*</label>
               <input
                 id='last-name'
                 name='last-name'
@@ -99,7 +99,7 @@ export default function Contact() {
               )}
             </div>
           </div>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>Email*</label>
           <input
             id='email'
             name='email'
@@ -110,7 +110,7 @@ export default function Contact() {
           {errors.email && (
             <p className={styles.error}>{errors.email.message}</p>
           )}
-          <label htmlFor='subject'>Subject</label>
+          <label htmlFor='subject'>Subject*</label>
           <input
             id='subject'
             name='subject'
@@ -125,7 +125,7 @@ export default function Contact() {
           {errors.subject && (
             <p className={styles.error}>{errors.subject.message}</p>
           )}
-          <label htmlFor='body'>Message</label>
+          <label htmlFor='body'>Message*</label>
           <textarea
             id='body'
             name='body'
@@ -136,7 +136,7 @@ export default function Contact() {
           {errors.body && <p className={styles.error}>{errors.body.message}</p>}
           {formSubmitted && (
             <h5 className={styles.formSuccess}>
-              Thank you for contacting us! We will respond as fast as we can.
+              Thank you for contacting us! We will contact you by email as fast as we can.
             </h5>
           )}
           <button type='submit' className={buttonStyles.primaryButton}>
