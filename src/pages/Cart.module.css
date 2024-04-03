@@ -66,12 +66,10 @@
   font-size: 15px;
 }
 
-
-
 @media only screen and (max-width: 783px) {
   .childHeader {
+    font-size: 2rem;
     min-width: 90%;
-    padding-bottom: 40px;
   }
   .cartCard {
     min-height: 230px;
@@ -81,6 +79,7 @@
   .cartCardContent {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
     height: auto;
     color: var(--dark);
   }
@@ -88,5 +87,9 @@
   .cartCard img {
     min-height: 230px;
     min-width: 40%;
+  }
+
+  .totalSum {
+    font-size: 1rem;
   }
 }

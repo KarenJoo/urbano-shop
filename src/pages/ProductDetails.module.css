@@ -109,14 +109,18 @@
 }
 
 @media only screen and (max-width: 783px) {
-
   .reviewsContainer {
     width: 90%;
   }
+  
   .reviewFoot {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+  }
 
+  .productDetailsImage {
+    height: 250px;
   }
 
   .reviewFoot p {
@@ -124,5 +128,6 @@
     align-items: center;
     margin: 10px auto;
     text-align: center;
+    width: 250px;
   }
 }

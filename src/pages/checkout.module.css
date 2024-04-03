@@ -10,3 +10,12 @@
   margin-top: 0px;
   margin-bottom: 60px;
 }
+
+@media only screen and (max-width: 783px) {
+  .childText {
+    font-size: 15px;
+    padding: 0px 40px 0px 40px;
+    text-align: left;
+    align-items: center;
+  }
+}
