@@ -22,12 +22,12 @@ describe('ProductCard', () => {
 
     render(<ProductCard product={product} />)
 
-    expect(screen.getByAltText('Product Image')).toBeTruthy()
-    expect(screen.getByText(product.title)).toBeTruthy()
-    expect(screen.getByText(product.description)).toBeTruthy()
-    expect(screen.getByText(`${product.price} NOK`)).toBeTruthy()
-    expect(screen.getByText(`${product.discountedPrice} NOK`)).toBeTruthy()
-    expect(screen.getByText('View Product')).toBeTruthy()
+    expect(screen.getByAltText('Product Image')).toBeInTheDocument()
+    expect(screen.getByText(product.title)).toBeInTheDocument()
+    expect(screen.getByText(product.description)).toBeInTheDocument()
+    expect(screen.getByText(`${product.price} NOK`)).toBeInTheDocument()
+    expect(screen.getByText(`${product.discountedPrice} NOK`)).toBeInTheDocument()
+    expect(screen.getByText('View Product')).toBeInTheDocument()
     expect(screen.getByText('View Product')).toHaveAttribute(
       'href',
       `/product/${product.id}`,

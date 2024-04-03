@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout'
 import Navbar from './components/Header'
 import Footer from './components/Footer'
 import Layout from './components/Layout'
+import RouteNotFound from './components/Errors/PageError'
 import { store } from './store/store'
 import { Provider } from 'react-redux'
 
@@ -25,7 +26,8 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
-          </Routes>
+            <Route path="*" element={<RouteNotFound />} />         
+             </Routes>
         </Layout>
       </Provider>
     </Grommet>
