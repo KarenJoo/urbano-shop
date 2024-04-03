@@ -31,18 +31,18 @@
 .clock {
   color: var(--bg-color);
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
 .searchBar {
-  color: var(--primary-color);
-  margin: 30px auto;
+  color: var(--bg-color);
+  margin: 40px auto;
   font-size: 40px;
   max-width: 600px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px #1010106e;
+  text-shadow: 1px 3px 5px #101010c2;
 }
 
 

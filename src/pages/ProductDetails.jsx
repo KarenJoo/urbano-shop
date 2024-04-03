@@ -73,12 +73,14 @@ export default function ProductDetails() {
         {product.reviews && product.reviews.length > 0 ? (
           product.reviews.map((review) => (
             <div key={review.id} className={styles.review}>
-              <h5>Rating: {review.rating}</h5>
               <div className={styles.reviewFoot}>
                 <p className={styles.reviewName}>
                   <strong>{review.username}</strong>
                 </p>
-                <p className={styles.reviewDescription}>{review.description}</p>
+                <p className={styles.reviewDescription}>{review.description}</p>{' '}
+                <p>
+                  <strong>Rating: {review.rating}</strong>
+                </p>
               </div>
             </div>
           ))

@@ -85,17 +85,6 @@
   max-width: 600px;
 }
 
-.review {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 10px auto;
-}
-
-.review h5 {
-  margin: 0 auto;
-}
-
 .singleReview {
   width: 100%;
   margin: auto;
@@ -103,22 +92,12 @@
 }
 .reviewFoot {
   display: flex;
-  box-sizing: border-box;
-  margin-left: 20px;
-  padding-right: 20px;
-  max-width: 600px;
-}
-
-.reviewName {
-  flex: 1;
-}
-
-.reviewDescription {
-  flex: 3;
-  text-align: left;
+  flex-direction: row;
+  align-items: center;
 }
 
 .reviewFoot p {
+  flex: 1;
   padding-right: 20px;
   margin-bottom: 40px;
   margin-top: 30px;
@@ -130,9 +109,14 @@
 }
 
 @media only screen and (max-width: 783px) {
+
+  .reviewsContainer {
+    width: 90%;
+  }
   .reviewFoot {
     display: flex;
     flex-direction: column;
+
   }
 
   .reviewFoot p {
