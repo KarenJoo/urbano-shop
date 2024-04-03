@@ -37,8 +37,9 @@
 .cardHeadContent {
   text-align: left;
   height: 100px;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 40px;
+  font-size: 14px; 
+
 }
 
 .cardFootContent {
@@ -49,7 +50,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px;
+  height: 300px;
+  width: 100%;
   overflow: hidden;
 }
 
