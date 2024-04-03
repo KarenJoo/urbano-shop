@@ -3,10 +3,10 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import ProductCard from './ProductCard'
 
-// Mock the react-router-dom Link component
+// Mocks the Link component
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  Link: ({ to, children }) => <a href={to}>{children}</a>, // Mock Link as anchor element
+  Link: ({ to, children }) => <a href={to}>{children}</a>,
 }))
 
 describe('ProductCard', () => {
@@ -23,6 +23,10 @@ describe('ProductCard', () => {
     render(<ProductCard product={product} />)
 
     expect(screen.getByAltText('Product Image')).toBeTruthy()
+    expect(screen.getByText(product.title)).toBeTruthy()
+    expect(screen.getByText(product.description)).toBeTruthy()
+    expect(screen.getByText(`${product.price} NOK`)).toBeTruthy()
+    expect(screen.getByText(`${product.discountedPrice} NOK`)).toBeTruthy()
     expect(screen.getByText('View Product')).toBeTruthy()
     expect(screen.getByText('View Product')).toHaveAttribute(
       'href',
