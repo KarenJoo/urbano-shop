@@ -30,8 +30,8 @@ export const theme = {
       background-color: #efefef98;
       border-radius: 5px;
       max-width: 50%;
-      min-width: 250px;
-      margin: 0px auto;
+      min-width: 300px;
+      margin: 10px auto;
       display: flex;
       padding: 12px 12px;
       color: #38609d;

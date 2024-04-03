@@ -59,4 +59,8 @@
     margin: 20px auto;
     max-width: 300px;
   }
+
+  .primaryButton {
+  font-size: 12px;
+  }
 }

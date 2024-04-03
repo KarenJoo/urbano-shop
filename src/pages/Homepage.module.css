@@ -9,15 +9,15 @@
   text-align: center;
   align-items: center;
   display: flex;
-  width: 300px;
+  width: 60%;
   flex-direction: column;
-  margin-left: 10%;
+  margin-right: 50%;
   display: flex;
 }
 
 .heroBanner h4 {
   font-weight: 300;
-  margin-top: 80%;
+  margin-top: 30%;
   margin-bottom: 10px;
   color: var(--bg-color);
 }
@@ -34,7 +34,6 @@
   margin-bottom: 10px;
 }
 
-
 .searchBar {
   color: var(--bg-color);
   margin: 40px auto;
@@ -45,10 +44,9 @@
   text-shadow: 1px 3px 5px #101010c2;
 }
 
-
 .filterContainer {
   display: flex;
-  width: 400px;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -82,7 +80,30 @@
     margin: 0 auto;
   }
 
+  .heroBanner {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .heroBanner h3 {
+    text-align: left;
+    padding-left: 20%;
+    font-size: 3em;
+    line-height: 0.8;
+    max-width: 200px;
+  }
+
   .heroContainer h1 {
     font-size: 20px;
+  }
+
+  .searchBar {
+    font-size: 25px;
+    text-align: center;
+    min-width: 300px;
+  }
+
+  .filterContainer {
+    width: 90%;
   }
 }
