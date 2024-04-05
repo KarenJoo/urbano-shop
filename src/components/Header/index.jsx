@@ -68,7 +68,7 @@ export default function Navbar() {
             className={styles.burgerMenu}
             onClick={dropDownMenu}
             aria-label='Toggle navigation'
-            data-testid="burger-menu"
+            data-testid='burger-menu'
           >
             <span></span>
             <span></span>

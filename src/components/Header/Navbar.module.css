@@ -16,6 +16,9 @@
   align-items: center;
   padding: 20px 20px 5px 20px;
   background-color: #000000d6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar h1 {
