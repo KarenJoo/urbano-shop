@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import useFetch from '../hooks/useFetch'
 import { PRODUCTS_URL } from '../utils/api'
 import styles from './Homepage.module.css'
 import buttonStyles from '../components/Buttons.module.css'
 import { TextInput, Box, Clock, Grommet } from 'grommet'
-import { filterProducts, searchProducts } from '../utils/filterAndSearch'
-import { Link } from 'react-router-dom'
+import { filterProducts } from '../utils/filterAndSearch'
 import { theme } from '../theme.js'
 import useClock from '../hooks/useClock.js'
 import errorStyles from '../components/Errors/Errors.module.css'
@@ -20,7 +19,11 @@ export default function Homepage() {
   const currentTime = useClock()
 
   if (loading) {
-    return <div className='parentContainer'><div className={errorStyles.loader}>Loading...</div></div>
+    return (
+      <div className='parentContainer'>
+        <div className={errorStyles.loader}>Loading...</div>
+      </div>
+    )
   }
 
   if (error) {
