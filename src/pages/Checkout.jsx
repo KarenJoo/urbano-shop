@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../pages/Checkout.module.css'
+import styles from './Checkout.module.css'
 import { Link } from 'react-router-dom'
 import buttonStyles from '../components/Buttons.module.css'
 
