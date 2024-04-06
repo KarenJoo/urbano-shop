@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.imageContainer}>
-        <img src={image.url} alt='Product Image' />
+        <img src={image.url} alt={title} />
       </div>
       <div className={styles.cardContent}>
         <div className={styles.cardHeadContent}>

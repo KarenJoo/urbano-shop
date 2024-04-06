@@ -4,16 +4,16 @@ import styles from './Navbar.module.css'
 import { useSelector } from 'react-redux'
 import cartIcon from '../../assets/icons/shopping-cart.svg'
 
-export default function Navbar() {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const cartItems = useSelector((state) => state.cart.cartItems)
   const menuClose = useRef(null)
 
-  const [cartCount, setCartCount] = useState(calculateTotalQuantity())
-
-  function calculateTotalQuantity() {
+  const calculateTotalQuantity = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0)
   }
+
+  const [cartCount, setCartCount] = useState(calculateTotalQuantity())
 
   const dropDownMenu = () => {
     setMenuOpen(!menuOpen)
@@ -27,10 +27,10 @@ export default function Navbar() {
     const totalQuantity = calculateTotalQuantity()
     setCartCount(totalQuantity)
     localStorage.setItem('cartCount', totalQuantity.toString())
-  }, [cartItems])
+  }, [cartItems, calculateTotalQuantity])
 
   useEffect(() => {
-    function handleClickOutside(event) {
+    const handleClickOutside = (event) => {
       if (menuClose.current && !menuClose.current.contains(event.target)) {
         setMenuOpen(false)
       }
@@ -45,7 +45,6 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to={`/`} onClick={closeMenu}>
-        {' '}
         <h1>Urbano</h1>
       </Link>
       <div className={styles.linkCartContainer}>
@@ -85,3 +84,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+export default Navbar
