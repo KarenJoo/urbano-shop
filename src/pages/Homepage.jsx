@@ -36,14 +36,6 @@ export default function Homepage() {
     setDisplayCount((prevCount) => prevCount + 6)
   }
 
-  const handleAllProducts = () => {
-    setDisplaySale(false)
-  }
-
-  const handleProductsOnSale = () => {
-    setDisplaySale(true)
-  }
-
   const displaySearchProducts = filterProducts(
     products,
     searchTerm,
