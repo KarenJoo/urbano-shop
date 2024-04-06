@@ -14,7 +14,7 @@ body {
 }
 
 p {
-  font-weight: 200;
+  font-weight: 300;
   font-size: 15px;
 }
 
@@ -34,7 +34,6 @@ img {
   background-attachment: fixed;
   min-height: 100vh;
   min-width: 200px;
-
 }
 
 .childContainer {
@@ -47,6 +46,12 @@ img {
   justify-content: center;
   margin: 50px auto;
   min-width: 200px;
+}
+
+.childHeader {
+  margin: 40px auto;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .headerText {
