@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import { useSelector } from 'react-redux'
@@ -9,9 +9,9 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart.cartItems)
   const menuClose = useRef(null)
 
-  const calculateTotalQuantity = () => {
+  const calculateTotalQuantity = useCallback(() => {
     return cartItems.reduce((total, item) => total + item.quantity, 0)
-  }
+  }, [cartItems])
 
   const [cartCount, setCartCount] = useState(calculateTotalQuantity())
 
