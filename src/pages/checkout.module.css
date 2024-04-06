@@ -1,14 +1,19 @@
-.childHeader,
-.childText {
-  margin: 50px auto;
+.checkoutContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.childHeader {
+  margin: 40px auto;
   text-align: center;
 }
 
-.childText {
+.childText p {
   font-weight: 400;
   font-size: 20px;
-  margin-top: 0px;
-  margin-bottom: 60px;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.8;
 }
 
 @media only screen and (max-width: 783px) {

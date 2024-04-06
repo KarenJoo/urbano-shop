@@ -7,13 +7,16 @@ export default function Checkout() {
   return (
     <div className='parentContainer'>
       <div className='childContainer'>
-        <h1 className={styles.childHeader}>Checkout</h1>
-        <h5 className={styles.childText}>
-          Your order was successful! Thank you for shopping at Urbano.
-        </h5>
-        <Link to={`/`} className={buttonStyles.primaryButton}>
-          Continue shopping
-        </Link>
+        <div className={styles.checkoutContainer}>
+          <h1 className={styles.childHeader}>Checkout</h1>
+          <div className={styles.childText}>
+            <p>Your order was successful!</p>
+            <p>Thank you for shopping at Urbano.</p>
+          </div>
+          <Link to={`/`} className={buttonStyles.primaryButton}>
+            Continue shopping
+          </Link>
+        </div>
       </div>
     </div>
   )
