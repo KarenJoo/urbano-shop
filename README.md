@@ -1,70 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="797" alt="urbano1" src="https://github.com/KarenJoo/urbano-shop/assets/114563762/9cc6f106-2fa6-4e93-b65f-ef0497a05e23">
 
-## Available Scripts
+# Urbano 
 
-In the project directory, you can run:
+## Description
+Your ultimate destination for trendy and high-quality gadgets! At Urbano, we're all about bringing you the latest and products that not only elevate your style but also enhance your everyday life.
 
-### `npm start`
+Our mission at Urbano is simple: to cater to the needs of the modern urbanite who values style, quality, and innovation. Whether you're looking to upgrade your tech game with the latest gadgets or seeking the perfect gift for that special someone, Urbano has you covered.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Explore Urbano today and shop with confidence.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Requirements and features
+The client has specified the following requirements in the form of User Stories:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Homepage listing all products, search bar filtering products
+    - Individual product page w/ add to cart button and reviews listed
+    - Cart page listing all products and total costs
+    - Checkout success page displaying an order successful message and link to the homepage
+    - Contact page including a form with validation
 
-### `npm run build`
+### A user can:
+    - View all products
+    - Search for a specific Venue
+    - Filter products by sale and original price
+    - View a specific products page by id displaying the product data
+    - Display amount of cart items in the navbar 
+    - Interact with the contact form 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## Built with
+  - React CRA
+  - styled-components
+  - React-router-dom
+  - React-hook-form
+  - Redux
+  - Noroff API v2 online-shop
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Getting Started with Create React App
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Clone the repo:
+ gh repo clone KarenJoo/urbano-shop
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install dependencies:
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Run app locally:
+npm run start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Installing
 
-## Learn More
+    Clone the repo:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ gh repo clone KarenJoo/urbano-shop.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Install the dependencies:
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Dependencies in Visual Studio Code
+- Code Editor 
+- Live Server 
 
-### Analyzing the Bundle Size
+## Running
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To run the app, run the following commands:
 
-### Making a Progressive Web App
+   npm run start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
+Live site: https://urbano-shop.netlify.app/
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Authors and Contact
+**Karen Jo**
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📫 karenfiksdahl@gmail.com
